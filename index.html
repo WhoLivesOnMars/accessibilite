@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Accessible</title>
+  <meta name="description" content="Exemple de site web respectant les normes d'accessibilité WCAG.">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+  <!-- Header avec navigation -->
+  <header role="banner">
+    <nav role="navigation" aria-label="Menu principal">
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Mon Site Accessible</h1>
+  </header>
+
+  <!-- Contenu principal -->
+  <main id="main-content" role="main">
+
+    <section>
+      <h2>Bienvenue</h2>
+      <p>Voici un exemple de site web conçu pour être accessible à tous, respectant les normes WCAG 2.2.</p>
+    </section>
+
+    <section>
+      <h3>Les chats</h3>
+      <p>Tout le contenu est structuré avec des balises sémantiques et des en-têtes hiérarchiques.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+
+  </footer>
 </body>
 </html>
