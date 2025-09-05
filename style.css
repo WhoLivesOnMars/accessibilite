@@ -1,45 +1,13 @@
+/*****| Principale |*****/
 body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #000;
-      background-color: #fff;
-    }
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+}
 
-    a {
-      color: #005ea5;
-    }
-    a:focus, a:hover {
-      outline: 3px solid #ffbf47;
-      outline-offset: 2px;
-    }
+/*****| Nikita |*****/
 
-    header, nav, main, footer {
-      padding: 1rem;
-    }
+/*****| Anja |*****/
 
-    nav a {
-      margin-right: 1rem;
-    }
-
-    button:focus {
-      outline: 3px solid #ffbf47;
-      outline-offset: 2px;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.2;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #000;
-      color: #fff;
-      padding: 8px;
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
+/*****| Daria |*****/
