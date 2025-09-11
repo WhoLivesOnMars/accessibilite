@@ -3,22 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Site Accessible</title>
   <meta name="description" content="Exemple de site web respectant les normes d'accessibilité WCAG.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!--| Header + navigation Nikita |-->
-  <header role="banner">
-    <nav role="navigation" aria-label="Menu principal">
-      <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <h1>Notre Site Accessible</h1>
+  <!--  Nikita -->
+
+  <!-- Lien de saut au contenu -->
+  <a class="skip-link" href="#main-content">Passer au contenu</a>
+
+  <!-- Header + Navigation -->
+  <header>
+    <div class="navwrap" role="banner">
+      <div class="brand"><a href="/" class="top-link">MonSite</a></div>
+
+      <!-- Bouton hamburger mobile -->
+      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <ul id="main-menu" class="menubar" role="menubar">
+          
+          <li role="none">
+            <a class="top-link" role="menuitem" href="/accueil" tabindex="0">Accueil</a>
+          </li>
+
+          <li role="none">
+            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
+              Services <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
+              <a role="menuitem" href="/services/audit" tabindex="-1">Audit d'accessibilité</a>
+              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseil</a>
+              <a role="menuitem" href="/services/formation" tabindex="-1">Formation</a>
+            </div>
+          </li>
+
+          <li role="none">
+            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
+              Ressources <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
+              <a role="menuitem" href="/docs/wcag" tabindex="-1">WCAG résumé</a>
+              <a role="menuitem" href="/docs/outils" tabindex="-1">Outils</a>
+              <a role="menuitem" href="/docs/checklist" tabindex="-1">Checklist</a>
+            </div>
+          </li>
+
+          <li role="none">
+            <a class="top-link" role="menuitem" href="/contact" tabindex="0">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
   </header>
 
 
@@ -42,5 +89,104 @@
   <footer role="contentinfo">
 
   </footer>
+
+
+  <script>
+  // Hamburger
+  const toggle = document.querySelector('.menu-toggle');
+  const menubar = document.querySelector('.menubar');
+
+  toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      menubar.classList.toggle('show');
+  });
+
+  // Accessible submenu
+  document.querySelectorAll('.menu-button').forEach(btn => {
+      const submenu = document.getElementById(btn.getAttribute('aria-controls'));
+      const items = Array.from(submenu.querySelectorAll('[role="menuitem"]'));
+      
+      items.forEach(mi => mi.setAttribute('tabindex','-1'));
+      submenu.setAttribute('aria-hidden','true');
+
+      const closeMenu = () => {
+          submenu.hidden = true;
+          submenu.setAttribute('aria-hidden','true');
+          btn.setAttribute('aria-expanded','false');
+      };
+
+      btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('.menu-button').forEach(b => {
+              if(b !== btn){
+                  const s = document.getElementById(b.getAttribute('aria-controls'));
+                  s.hidden = true;
+                  b.setAttribute('aria-expanded','false');
+              }
+          });
+          if(expanded) closeMenu();
+          else {
+              submenu.hidden = false;
+              submenu.setAttribute('aria-hidden','false');
+              btn.setAttribute('aria-expanded','true');
+              items[0]?.focus();
+          }
+      });
+
+      // Keyboard navigation on top button
+      btn.addEventListener('keydown', e => {
+          if(e.key === 'ArrowDown') {
+              e.preventDefault();
+              if(submenu.hidden) btn.click();
+              items[0].focus();
+          } else if(e.key === 'Escape') {
+              e.preventDefault();
+              closeMenu();
+              btn.focus();
+          } else if(e.key === 'Tab') {
+              // fermer le menu si on tab vers l’extérieur
+              setTimeout(() => {
+                  if(!submenu.contains(document.activeElement) && document.activeElement !== btn){
+                      closeMenu();
+                  }
+              }, 0);
+          }
+      });
+
+      // Keyboard navigation inside submenu
+      submenu.addEventListener('keydown', e => {
+          const idx = items.indexOf(document.activeElement);
+          if(e.key === 'ArrowDown'){
+              e.preventDefault();
+              items[(idx+1)%items.length].focus();
+          } else if(e.key === 'ArrowUp'){
+              e.preventDefault();
+              items[(idx-1+items.length)%items.length].focus();
+          } else if(e.key === 'Escape'){
+              e.preventDefault();
+              closeMenu();
+              btn.focus();
+          } else if(e.key === 'Tab') {
+              setTimeout(() => {
+                  if(!submenu.contains(document.activeElement) && document.activeElement !== btn){
+                      closeMenu();
+                  }
+              },0);
+          }
+      });
+
+      // Close menu if focus leaves submenu entirely
+      submenu.addEventListener('focusout', () => {
+          setTimeout(() => {
+              if(!submenu.contains(document.activeElement) && document.activeElement !== btn){
+                  closeMenu();
+              }
+          }, 10);
+      });
+  });
+  </script>
+
+
 </body>
 </html>

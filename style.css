@@ -1,12 +1,210 @@
 /*****| Principale |*****/
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     line-height: 1.6;
     color: #000;
     background-color: #fff;
+    margin: 0;
 }
 
 /*****| Nikita |*****/
+
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --accent: #010b1e;
+    --accent-light: #ffffff;
+    --focus: 0 0 0 1px var(--accent);
+    --nav-height: 56px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    background: #ffffff00;
+    color: #ffffff00;
+    margin: 4px 0 0 4px ;
+    padding: .05rem 1.25rem;
+    z-index: 100;
+    border-radius: 2px;
+    transition: top 0.1s ease;
+}
+.skip-link:focus {
+    color: #000000;
+    outline: none;
+    border: 1px solid var(--accent);
+}
+
+/* Header */
+header {
+    background: var(--bg);
+    border-bottom: 1px solid #d7d7d7;
+    position: relative;
+}
+
+.navwrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.75rem;
+}
+
+/* Brand */
+.brand {
+    font-weight: 700;
+}
+
+/* Menubar */
+nav[role="navigation"] {
+    flex:1;
+}
+.menubar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: .25rem;
+    align-items: center;
+}
+.menubar > li {
+    position: relative;
+}
+
+/* Menu buttons */
+.menu-button {
+    background: none;
+    border: 0;
+    padding: 0 1.25rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Focus clavier */
+.menu-button:focus,
+.top-link:focus,
+.submenu a:focus,
+.submenu button:focus {
+    outline: none;
+    border: 1px #000 solid;
+    border-radius: 2px;
+}
+
+/* Chevron */
+.chev {
+    display:inline-block;
+    transform:rotate(0);
+    transition:transform .15s;
+}
+.menu-button[aria-expanded="true"] .chev {
+    transform:rotate(180deg);
+}
+
+/* Submenu */
+.submenu {
+    position: absolute;
+    left: 0;
+    margin-top: .42rem;
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: .3rem .3rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    z-index: 50;
+}
+.submenu[hidden] {
+    display: none;
+}
+.submenu a,
+.submenu button {
+    display: block;
+    padding: .2rem 0.75rem;
+    background: none;
+    border: 0;
+    text-align: left;
+    font: inherit;
+    color: var(--text);
+}
+.submenu a:hover,
+.submenu button:hover {
+    background:#f5f7ff;
+}
+
+/* Top-level link */
+.top-link {
+    padding: .2rem 1.25rem;
+    border-radius: 8px;
+}
+
+/* Hamburger bouton */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: .5rem;
+    margin-left: auto;
+    border-radius: 6px;
+}
+.menu-toggle:focus {
+    outline:none;
+    background: var(--accent-light);
+    box-shadow: var(--focus);
+}
+.menu-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px auto;
+    background-color: var(--text);
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menubar {
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        padding: .5rem;
+        border-radius: 8px;
+        display: none;
+    }
+    .menubar.show {
+        display: flex;
+    }
+    .menubar > li {
+        width: 100%;
+    }
+    .submenu {
+        position: static;
+        margin-top: .25rem;
+    }
+}
+
+/* Motion reduction */
+@media (prefers-reduced-motion: reduce){
+    .chev, .menu-button, .submenu, .menu-toggle .bar {
+        transition:none;
+    }
+}
+
 
 /*****| Anja |*****/
 
