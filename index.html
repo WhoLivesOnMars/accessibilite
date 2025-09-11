@@ -64,10 +64,33 @@
             <a class="top-link" role="menuitem" href="/contact" tabindex="0">Contact</a>
           </li>
 
+          <li role="none" class="menu-search">
+            <form role="search" aria-label="Recherche sur le site">
+              <label for="site-search" class="sr-only">Recherche</label>
+              <input 
+                type="search" 
+                id="site-search" 
+                name="q" 
+                placeholder="Rechercher..." 
+                aria-placeholder="Rechercher">
+              <button type="submit">🔍</button>
+            </form>
+          </li>
+
         </ul>
       </nav>
     </div>
   </header>
+
+  
+  <!-- Fil d’Ariane -->
+  <nav aria-label="Fil d’Ariane" class="breadcrumb">
+    <ol>
+      <li><a href="/accueil">Accueil</a></li>
+      <li><a href="/services">Nos services félins</a></li>
+      <li aria-current="page">Cours pour chatons</li>
+    </ol>
+  </nav>
 
 
   <!--| Contenu principal |-->
@@ -75,7 +98,8 @@
     
     <!--| Form Anja |-->
     <section>
-      <h2>Form Anja</h2>
+      <h2>Form Anja</h2>  
+      <button><a>aaa</a></button>
 
     </section>
 

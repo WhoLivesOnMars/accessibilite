@@ -30,11 +30,12 @@ a {
     top: 0px;
     background: #ffffff00;
     color: #ffffff00;
-    margin: 4px 0 0 4px ;
+    margin: 6px 0 0 6px ;
     padding: .05rem 1.25rem;
     z-index: 100;
     border-radius: 2px;
     transition: top 0.1s ease;
+    font-size: 0.9rem;
 }
 .skip-link:focus {
     color: #000000;
@@ -60,6 +61,7 @@ header {
 /* Brand */
 .brand {
     font-weight: 700;
+    font-size: 0.9rem;
 }
 
 /* Menubar */
@@ -73,6 +75,7 @@ nav[role="navigation"] {
     padding: 0;
     gap: .25rem;
     align-items: center;
+    font-size: 0.8rem;
 }
 .menubar > li {
     position: relative;
@@ -173,6 +176,68 @@ nav[role="navigation"] {
     transition: all 0.3s ease;
 }
 
+
+/* Champ de recherche dans la nav */
+.menu-search {
+  margin-left: auto;
+}
+
+.menu-search form {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.menu-search input[type="search"] {
+  padding: 0.3rem 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #787878;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.menu-search input[type="search"]:focus {
+  outline: 1px solid var(--accent);
+}
+
+.menu-search button {
+  background: #fff;
+  color: #fff;
+  outline: 1px solid #787878; 
+  border: none;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-search button:focus {
+  outline: 1px solid #000000; 
+}
+
+
+/* Responsive mobile */
+@media (max-width: 640px) {
+  .menu-search {
+    margin-left: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .menu-search form {
+    width: 100%;
+  }
+
+  .menu-search input[type="search"] {
+    flex: 1;
+    width: 100%;
+  }
+
+  .menu-search button {
+    flex-shrink: 0;
+  }
+}
+
+
 /* Responsive */
 @media (max-width: 640px) {
     .navwrap {
@@ -215,12 +280,44 @@ nav[role="navigation"] {
     }
 }
 
-
 /* Motion reduction */
 @media (prefers-reduced-motion: reduce){
     .chev, .menu-button, .submenu, .menu-toggle .bar {
         transition:none;
     }
+}
+
+/*Fil d’Ariane*/
+.breadcrumb {
+  font-size: 0.7rem;
+  margin: 0.5rem 0;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.breadcrumb li::after {
+  content: "›";
+  margin: 0 0.3rem;
+}
+
+.breadcrumb li:last-child::after {
+  content: "";
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.breadcrumb li[aria-current="page"] {
+  font-weight: bold;
+  color: #000;
 }
 
 
