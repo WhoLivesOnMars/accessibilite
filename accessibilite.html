@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibilité</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lien de saut au contenu -->
+  <a class="skip-link" href="#main-content">Passer au contenu</a>
+
+  <!-- Header + Navigation -->
+  <header>
+    <div class="navwrap" role="banner">
+      <div class="brand"><a href="./index.html" class="top-link">Chats.com</a></div>
+
+      <!-- Bouton hamburger mobile -->
+      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <ul id="main-menu" class="menubar" role="menubar">
+
+          <li role="none">
+            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
+              <span class="menu-text">Nos services félins</span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
+              <a role="menuitem" href="/services/audit" tabindex="-1">Surveille ton territoire</a>
+              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseils de chat </a>
+              <a role="menuitem" href="/services/formation" tabindex="-1">Cours pour chatons</a>
+            </div>
+          </li>
+
+          <li role="none">
+          <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
+            <span class="menu-text">Trésors du chat</span>
+            <span class="chev" aria-hidden="true">▾</span>
+          </button>
+            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
+              <a role="menuitem" href="/docs/wcag" tabindex="-1">Griffes et règles</a>
+              <a role="menuitem" href="/docs/outils" tabindex="-1">Jouets et accessoires</a>
+              <a role="menuitem" href="/docs/checklist" tabindex="-1">Liste du chat exigeant</a>
+            </div>
+          </li>
+
+          <li role="none">
+            <a class="top-link" role="menuitem" href="/contact" tabindex="0">Contact</a>
+          </li>
+
+          <li role="none" class="menu-search">
+            <form role="search" aria-label="Recherche sur le site">
+              <label for="site-search" class="sr-only">Recherche</label>
+              <input 
+                type="search" 
+                id="site-search" 
+                name="q" 
+                placeholder="Rechercher..." 
+                aria-placeholder="Rechercher">
+              <button type="submit"><img src="./img/magnifying-glass-solid-full.svg"></button>
+            </form>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <main>
+        <p>Ce site s’efforce de rendre ses contenus accessibles conformément aux normes <span class="highlight">WCAG 2.1</span> et <span class="highlight">RGAA 4.0</span>.</p>
+
+        <h2>Conformité et normes</h2>
+        <p>Nous suivons les bonnes pratiques pour rendre notre site accessible aux personnes en situation de handicap. Le niveau de conformité atteint est <span class="highlight">partiel</span>, avec des améliorations continues.</p>
+
+        <h2>Limitations de l’accessibilité</h2>
+        <p>Certains contenus peuvent ne pas être totalement accessibles :</p>
+        <ul>
+            <li>Vidéos sans sous-titres intégrés.</li>
+            <li>Contenus dynamiques complexes dans certaines pages.</li>
+        </ul>
+        <p>Nous travaillons à mettre en place des solutions alternatives lorsque c’est possible.</p>
+
+        <h2>Fonctionnalités d’accessibilité</h2>
+        <ul>
+            <li>Raccourcis clavier pour naviguer rapidement.</li>
+            <li>Options pour augmenter la taille du texte et ajuster le contraste.</li>
+            <li>Descriptions textuelles pour les images et médias.</li>
+        </ul>
+
+        <h2>Contact pour signaler des problèmes</h2>
+        <p>Si vous rencontrez un problème d’accessibilité, contactez-nous :</p>
+        <ul>
+            <li>Email : <a href="mailto:chats@gmail.fr">chats@gmail.fr</a></li>
+            <li>Téléphone : 01 23 45 67 89</li>
+        </ul>
+
+        <h2>Mises à jour</h2>
+        <p>Dernière mise à jour : 2 octobre 2025</p>
+
+        <h2>Ressources supplémentaires</h2>
+        <ul>
+            <li><a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/">Déclaration officielle RGAA</a></li>
+            <li><a href="https://www.w3.org/WAI/">Guide WCAG (W3C)</a></li>
+        </ul>
+    </main>
+    <footer>
+        <p class="footer__copyright">
+            © 2025 Chats.com - Tous droits sont réservés.
+        </p>
+    </footer>
+</body>
+</html>
+
+
+<script src="script.js" defer></script>
