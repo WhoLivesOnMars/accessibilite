@@ -90,3 +90,99 @@
           }, 10);
       });
   });
+
+
+    // ======= VALIDATION FORMULAIRE (accessible) ANJA =======
+    (function () {
+    const form = document.getElementById('form-contact');
+    const errorSummary = document.getElementById('error-summary');
+    const errorList = document.getElementById('error-list');
+    const $ = (id) => document.getElementById(id);
+
+    function setFieldError(fieldId, message) {
+        const field = $(fieldId);
+        const err = $(fieldId + '-err');
+        if (!field || !err) return;
+        err.textContent = message || '';
+        if (message) field.setAttribute('aria-invalid', 'true');
+        else field.removeAttribute('aria-invalid');
+    }
+
+    function addSummaryError(fieldId, message) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + fieldId;
+        a.textContent = message;
+        a.addEventListener('click', () => $(fieldId)?.focus());
+        li.appendChild(a);
+        errorList.appendChild(li);
+    }
+
+    function validateEmail(value) {
+        if (!value.trim()) return 'Veuillez entrer votre adresse e-mail.';
+        return /\S+@\S+\.\S+/.test(value) ? '' : 'Veuillez entrer une adresse e-mail valide.';
+    }
+    function validateTel(value) {
+        if (!value.trim()) return ''; // optionnel
+        return /^[0-9]{10}$/.test(value) ? '' : 'Le numéro doit contenir exactement 10 chiffres, sans espaces.';
+    }
+    const req = (v, label) => v.trim() ? '' : `Veuillez entrer votre ${label}.`;
+    const valSujet = (v) => v ? '' : 'Veuillez sélectionner un sujet.';
+    const valMsg = (v) => !v.trim() ? 'Veuillez saisir votre message.' : (v.length <= 500 ? '' : 'Votre message dépasse 500 caractères.');
+    const valConsent = (b) => b ? '' : 'Vous devez accepter l’utilisation de vos données.';
+
+    function runValidation(e) {
+        errorList.innerHTML = '';
+        errorSummary.hidden = true;
+
+        const prenom = $('prenom')?.value || '';
+        const nom = $('nom')?.value || '';
+        const email = $('email')?.value || '';
+        const tel = $('tel')?.value || '';
+        const sujet = $('sujet')?.value || '';
+        const message = $('message')?.value || '';
+        const consent = $('consentement')?.checked || false;
+
+        ['prenom','nom','email','tel','sujet','message','consentement'].forEach(id => setFieldError(id, ''));
+
+        const errors = [
+        ['prenom', req(prenom,'prénom')],
+        ['nom', req(nom,'nom')],
+        ['email', validateEmail(email)],
+        ['tel', validateTel(tel)],
+        ['sujet', valSujet(sujet)],
+        ['message', valMsg(message)],
+        ['consentement', valConsent(consent)]
+        ].filter(([, msg]) => !!msg);
+
+        if (errors.length) {
+        e.preventDefault();
+        errors.forEach(([id, msg]) => {
+            setFieldError(id, msg);
+            addSummaryError(id, msg);
+        });
+        errorSummary.hidden = false;
+        errorSummary.setAttribute('tabindex', '-1');
+        errorSummary.focus();
+        }
+    }
+
+    form.addEventListener('submit', runValidation);
+
+    // Validation “au fil de l’eau”
+    [
+        ['prenom', (v)=>req(v,'prénom')],
+        ['nom', (v)=>req(v,'nom')],
+        ['email', validateEmail],
+        ['tel', validateTel],
+        ['sujet', valSujet],
+        ['message', valMsg]
+    ].forEach(([id, fn]) => {
+        const field = $(id);
+        if (!field) return;
+        const ev = field.tagName === 'SELECT' ? 'change' : 'input';
+        field.addEventListener(ev, () => setFieldError(id, fn(field.value)));
+        field.addEventListener('blur', () => setFieldError(id, fn(field.value)));
+    });
+
+    })();
