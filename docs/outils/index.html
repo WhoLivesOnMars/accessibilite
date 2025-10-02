@@ -13,31 +13,29 @@
     <title>Chats.com</title>
     <meta
       name="description"
-      content="Exemple de site web respectant les normes d'accessibilité WCAG."
+      content="Jouets et accessoires pour chats : choix, sécurité, bien-être. Page accessible avec images informatives."
     />
     <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
     <!-- Lien de saut au contenu -->
-    <a class="skip-link" href="#main-content">Passer au contenu</a>
+    <a class="skip-link" href="#main">Passer au contenu</a>
 
-    <!-- Header + Navigation -->
+    <!-- Header + Navigation (même structure que ta page) -->
     <header>
       <div class="navwrap" role="banner">
         <div class="brand">
           <a href="/index.html" class="top-link">Chats.com</a>
         </div>
 
-        <!-- Bouton hamburger mobile -->
         <button
           class="menu-toggle"
           aria-controls="main-menu"
           aria-expanded="false"
         >
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar"></span><span class="bar"></span
+          ><span class="bar"></span>
           <span class="sr-only">Menu</span>
         </button>
 
@@ -65,8 +63,8 @@
                   >Surveille ton territoire</a
                 >
                 <a role="menuitem" href="/services/conseil" tabindex="-1"
-                  >Conseils de chat
-                </a>
+                  >Conseils de chat</a
+                >
                 <a role="menuitem" href="/services/formation" tabindex="-1"
                   >Cours pour chatons</a
                 >
@@ -107,7 +105,7 @@
               <a
                 class="top-link"
                 role="menuitem"
-                href="./contact.html"
+                href="/contact.html"
                 tabindex="0"
                 >Contact</a
               >
@@ -117,14 +115,14 @@
               <form role="search" aria-label="Recherche sur le site">
                 <label for="site-search" class="sr-only">Recherche</label>
                 <input
-                  type="search"
                   id="site-search"
                   name="q"
+                  type="search"
                   placeholder="Rechercher..."
                   aria-placeholder="Rechercher"
                 />
                 <button type="submit">
-                  <img src="./img/magnifying-glass-solid-full.svg" />
+                  <img src="/img/magnifying-glass-solid-full.svg" alt="" />
                 </button>
               </form>
             </li>
@@ -134,100 +132,143 @@
     </header>
 
     <main id="main">
+      <!-- Fil d’Ariane -->
       <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
         <ol>
           <li><a href="/">Accueil</a></li>
           <li><span class="crumb-label">Trésors du chat</span></li>
-          <li aria-current="page">Griffes &amp; règles</li>
+          <li aria-current="page">Jouets &amp; accessoires</li>
         </ol>
       </nav>
 
+      <!-- Intro + image informative -->
       <section class="wrap" aria-labelledby="h1">
-        <h1 id="h1">Griffes & règles</h1>
+        <h1 id="h1">Jouets &amp; accessoires</h1>
         <p>
-          Entretenir les griffes sans stress, protéger tes meubles et respecter
-          le <em>bien-être</em> du chat.
+          Stimuler sans stresser&nbsp;: des choix simples, sûrs et adaptés au
+          tempérament de ton chat.
         </p>
 
-        <!-- Image informative (décrite) -->
+        <!-- Image INFORMATIVE (décrite) -->
         <figure class="figure">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cat_claw_closeup.jpg/500px-Cat_claw_closeup.jpg"
-            width="800"
-            height="450"
-            alt="Vue rapprochée de la griffe d'un chat."
+            src="https://www.whiskas.fr/sites/g/files/fnmzdf8176/files/2022-09/le-jeu-pour-canaliser-les-chats_5.jpg"
+            width="1200"
+            height="630"
+            alt="Chat concentré suivant un plumeau."
           />
           <figcaption>
-            Couper uniquement la pointe translucide. Ne jamais toucher la zone
-            rose (pulpe).
+            Privilégie des sessions courtes (5–10&nbsp;min) où le chat peut
+            “gagner” sa proie.
           </figcaption>
         </figure>
       </section>
 
-      <section class="wrap" aria-labelledby="regles">
-        <h2 id="regles">Les 5 règles d’or</h2>
-        <ul>
-          <li>
-            <strong>Jamais de douleur</strong> : si le chat se crispe, on
-            arrête.
+      <!-- Trois produits (images informatives + figcaption) -->
+      <section class="wrap" aria-labelledby="produits">
+        <h2 id="produits">Nos 3 incontournables</h2>
+
+        <ul class="cards-3">
+          <li class="card">
+            <figure>
+              <img
+                src="https://lecocondecesar.fr/wp-content/uploads/2023/04/Capture-decran-2023-04-15-a-08.29.29.png"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+                alt="Canne à pêche avec plumeau pour jeu de chasse interactif."
+              />
+              <figcaption>
+                À utiliser sous surveillance. Ranger hors d’atteinte après le
+                jeu.
+              </figcaption>
+            </figure>
           </li>
-          <li>
-            <strong>Progressif</strong> : une patte aujourd’hui, le reste
-            demain.
+
+          <li class="card">
+            <figure>
+              <img
+                src="https://static.zoomalia.com/cdn-cgi/image/width=1200,height=1200,quality=100,format=auto/prod_img/38440/xl_823632cee946db83e7a52ce5e8d6f0fed351636553207.jpg"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+                alt="Griffoir en carton couffin, forme creuse confortable pour sieste et griffades."
+              />
+              <figcaption>
+                Placer près d’une zone de passage ou du coin sieste.
+              </figcaption>
+            </figure>
           </li>
-          <li>
-            <strong>Outils propres</strong> : coupe-griffes adapté, désinfecté.
-          </li>
-          <li>
-            <strong>Renforcement positif</strong> : friandises et voix douce.
-          </li>
-          <li>
-            <strong>Plan B</strong> : vétérinaire si griffes noires/épaisses ou
-            si tu doutes.
+
+          <li class="card">
+            <figure>
+              <img
+                src="https://images.truffaut.com/media/catalog/product/6/2/62c99f56a44b0a49.jpg?width=700&height=700&store=fr&image-type=image"
+                width="400"
+                height="300"
+                loading="lazy"
+                decoding="async"
+                alt="Fontaine à eau silencieuse de 2&nbsp;L avec filtre, adaptée aux chats sensibles au bruit."
+              />
+              <figcaption>
+                Favorise l’hydratation. Nettoyage hebdomadaire recommandé.
+              </figcaption>
+            </figure>
           </li>
         </ul>
       </section>
 
-      <section class="wrap" aria-labelledby="coupe">
-        <h2 id="coupe">Couper les griffes en sécurité</h2>
-        <ol>
+      <!-- Conseils sécurité + image décorative -->
+      <section class="wrap" aria-labelledby="securite">
+        <h2 id="securite">Sécurité &amp; bien-être</h2>
+        <ul>
           <li>
-            Choisir un moment calme; poser le chat sur un support antidérapant.
+            <strong>Ficelles :</strong> toujours sous surveillance, puis
+            rangées.
           </li>
           <li>
-            Appuyer <em>légèrement</em> sur le doigt pour faire sortir la
-            griffe.
+            <strong>Laser :</strong> terminer par une prise tangible
+            (plumeau/jouet) pour éviter la frustration.
           </li>
           <li>
-            Couper la <strong>pointe</strong> translucide (éviter la zone rose).
+            <strong>Plumes :</strong> retirer les éléments cassés pour éviter
+            l’ingestion.
           </li>
-          <li>Récompenser; faire une patte à la fois si besoin.</li>
-        </ol>
-        <aside class="note" role="note">
-          Astuce : demande à quelqu’un de tenir une friandise pâte à lécher
-          pendant que tu coupes.
-        </aside>
+        </ul>
+        <!-- Image DÉCORATIVE (ignorée par les lecteurs d’écran) -->
+        <img
+          class="decor"
+          src="https://img.freepik.com/vecteurs-premium/empreinte-pattes-chat-marques-pieds-animaux-noirs_543062-1541.jpg"
+          width="120"
+          height="60"
+          alt=""
+        />
       </section>
 
+      <!-- FAQ courte -->
       <section class="wrap" aria-labelledby="faq">
         <h2 id="faq">FAQ rapide</h2>
         <details>
-          <summary>Dois-je couper si mon chat sort ?</summary>
+          <summary>Combien de temps jouer&nbsp;?</summary>
           <p>
-            Souvent non : les griffes s’usent dehors. Vérifie simplement
-            qu’elles ne s’incurvent pas.
+            Deux courtes sessions de 5–10&nbsp;minutes par jour suffisent pour
+            la plupart des chats.
           </p>
         </details>
         <details>
-          <summary>Et les chaussettes anti-griffures ?</summary>
+          <summary>Quels jouets laisser en libre-service&nbsp;?</summary>
           <p>
-            À éviter : gêne de mouvement, stress. Préfère griffoirs + éducation
-            positive.
+            Balles légères, souris en tissu. Évite les ficelles/plumeaux quand
+            tu n’es pas là.
           </p>
         </details>
       </section>
-      <section>
-        <h2>Plan du site</h2>
+
+      <!-- Plan du site (comme dans ta page) -->
+      <section class="wrap" aria-labelledby="plan">
+        <h2 id="plan">Plan du site</h2>
         <ul>
           <li><a href="/index.html">Accueil</a></li>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
@@ -238,11 +279,11 @@
       </section>
     </main>
 
-    <!---| Footer |-->
+    <!-- Footer -->
     <footer role="contentinfo" class="footer">
       <div class="footer__container">
         <div class="footer__links">
-          <a href="mentions-legales.html" class="footer__link"
+          <a href="/mentions-legales.html" class="footer__link"
             >Mentions légales</a
           >
           <a href="/rgpd.html" class="footer__link"
@@ -285,6 +326,7 @@
         </p>
       </div>
     </footer>
+
     <script src="../../script.js" defer></script>
   </body>
 </html>

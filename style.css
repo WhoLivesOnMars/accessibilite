@@ -519,6 +519,49 @@ summary {
     opacity:.35; }
 
 
+/* Grille simple sans puces */
+.cards-3{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.cards-3 > li{ list-style: none; } /* au cas où */
+
+@media (max-width: 900px){ .cards-3{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px){ .cards-3{ grid-template-columns: 1fr; } }
+
+/* Carte minimaliste */
+.card{
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: .75rem;
+}
+
+/* Image + légende */
+.card figure{ margin: 0; }
+.card img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.card figcaption{
+  margin-top: .5rem;
+  font-size: .95rem;
+  color: #555;
+}
+
+/* Focus clavier (a11y) */
+.card:focus-within{
+  outline: 2px solid var(--accent, #4f46e5);
+  outline-offset: 2px;
+}
+    
+ 
 
 /*****| Daria |*****/
 
