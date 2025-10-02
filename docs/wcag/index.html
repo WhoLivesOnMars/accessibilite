@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/image.png" type="image/png" />
+    <title>Chats.com</title>
+    <meta
+      name="description"
+      content="Exemple de site web respectant les normes d'accessibilité WCAG."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- Lien de saut au contenu -->
+    <a class="skip-link" href="#main-content">Passer au contenu</a>
+
+    <!-- Header + Navigation -->
+    <header>
+      <div class="navwrap" role="banner">
+        <div class="brand">
+          <a href="../../index.html" class="top-link">Chats.com</a>
+        </div>
+
+        <!-- Bouton hamburger mobile -->
+        <button
+          class="menu-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="main-menu" class="menubar" role="menubar">
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-services"
+                id="btn-services"
+              >
+                <span class="menu-text">Nos services félins</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-services"
+                aria-labelledby="btn-services"
+                hidden
+              >
+                <a role="menuitem" href="/services/audit" tabindex="-1"
+                  >Surveille ton territoire</a
+                >
+                <a role="menuitem" href="/services/conseil" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation" tabindex="-1"
+                  >Cours pour chatons</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-ressources"
+                id="btn-ressources"
+              >
+                <span class="menu-text">Trésors du chat</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-ressources"
+                aria-labelledby="btn-ressources"
+                hidden
+              >
+                <a role="menuitem" href="/docs/wcag" tabindex="-1"
+                  >Griffes et règles</a
+                >
+                <a role="menuitem" href="/docs/outils" tabindex="-1"
+                  >Jouets et accessoires</a
+                >
+                <a role="menuitem" href="/docs/checklist" tabindex="-1"
+                  >Liste du chat exigeant</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <a
+                class="top-link"
+                role="menuitem"
+                href="./contact.html"
+                tabindex="0"
+                >Contact</a
+              >
+            </li>
+
+            <li role="none" class="menu-search">
+              <form role="search" aria-label="Recherche sur le site">
+                <label for="site-search" class="sr-only">Recherche</label>
+                <input
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  placeholder="Rechercher..."
+                  aria-placeholder="Rechercher"
+                />
+                <button type="submit">
+                  <img src="./img/magnifying-glass-solid-full.svg" />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
+        <ol>
+          <li><a href="/">Accueil</a></li>
+          <li><span class="crumb-label">Trésors du chat</span></li>
+          <li aria-current="page">Griffes &amp; règles</li>
+        </ol>
+      </nav>
+
+      <section class="wrap" aria-labelledby="h1">
+        <h1 id="h1">Griffes & règles</h1>
+        <p>
+          Entretenir les griffes sans stress, protéger tes meubles et respecter
+          le <em>bien-être</em> du chat.
+        </p>
+
+        <!-- Image informative (décrite) -->
+        <figure class="figure">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cat_claw_closeup.jpg/500px-Cat_claw_closeup.jpg"
+            width="800"
+            height="450"
+            alt="Vue rapprochée de la griffe d'un chat."
+          />
+          <figcaption>
+            Couper uniquement la pointe translucide. Ne jamais toucher la zone
+            rose (pulpe).
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="wrap" aria-labelledby="regles">
+        <h2 id="regles">Les 5 règles d’or</h2>
+        <ul>
+          <li>
+            <strong>Jamais de douleur</strong> : si le chat se crispe, on
+            arrête.
+          </li>
+          <li>
+            <strong>Progressif</strong> : une patte aujourd’hui, le reste
+            demain.
+          </li>
+          <li>
+            <strong>Outils propres</strong> : coupe-griffes adapté, désinfecté.
+          </li>
+          <li>
+            <strong>Renforcement positif</strong> : friandises et voix douce.
+          </li>
+          <li>
+            <strong>Plan B</strong> : vétérinaire si griffes noires/épaisses ou
+            si tu doutes.
+          </li>
+        </ul>
+      </section>
+
+      <section class="wrap" aria-labelledby="coupe">
+        <h2 id="coupe">Couper les griffes en sécurité</h2>
+        <ol>
+          <li>
+            Choisir un moment calme; poser le chat sur un support antidérapant.
+          </li>
+          <li>
+            Appuyer <em>légèrement</em> sur le doigt pour faire sortir la
+            griffe.
+          </li>
+          <li>
+            Couper la <strong>pointe</strong> translucide (éviter la zone rose).
+          </li>
+          <li>Récompenser; faire une patte à la fois si besoin.</li>
+        </ol>
+        <aside class="note" role="note">
+          Astuce : demande à quelqu’un de tenir une friandise pâte à lécher
+          pendant que tu coupes.
+        </aside>
+      </section>
+
+      <section class="wrap" aria-labelledby="faq">
+        <h2 id="faq">FAQ rapide</h2>
+        <details>
+          <summary>Dois-je couper si mon chat sort ?</summary>
+          <p>
+            Souvent non : les griffes s’usent dehors. Vérifie simplement
+            qu’elles ne s’incurvent pas.
+          </p>
+        </details>
+        <details>
+          <summary>Et les chaussettes anti-griffures ?</summary>
+          <p>
+            À éviter : gêne de mouvement, stress. Préfère griffoirs + éducation
+            positive.
+          </p>
+        </details>
+      </section>
+      <section>
+        <h2>Plan du site</h2>
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/rgpd.html">Politique de confidentialité (RGPD)</a></li>
+          <li><a href="/accessibilite.html">Accessibilité</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!---| Footer |-->
+    <footer role="contentinfo" class="footer">
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="mentions-legales.html" class="footer__link"
+            >Mentions légales</a
+          >
+          <a href="/rgpd.html" class="footer__link"
+            >Politique de confidentialité</a
+          >
+          <a href="/accessibilite.html" class="footer__link">Accessibilité</a>
+          <a href="/contact.html" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a
+            href="https://www.facebook.com"
+            class="footer__social-link"
+            aria-label="Facebook"
+          >
+            <img
+              src="/img/social/square-facebook-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.twitter.com"
+            class="footer__social-link"
+            aria-label="Twitter"
+          >
+            <img
+              src="/img/social/square-twitter-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            class="footer__social-link"
+            aria-label="LinkedIn"
+          >
+            <img src="/img/social/linkedin-brands-solid-full.svg" alt="" />
+          </a>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Chats.com - Tous droits sont réservés.
+        </p>
+      </div>
+    </footer>
+    <script src="../../script.js" defer></script>
+  </body>
+</html>
