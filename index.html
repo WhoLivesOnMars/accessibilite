@@ -1,151 +1,388 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="./img/image.png" type="image/png">
-  <title>Chats.com</title>
-  <meta name="description" content="Exemple de site web respectant les normes d'accessibilité WCAG.">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/image.png" type="image/png" />
+    <title>Chats.com</title>
+    <meta
+      name="description"
+      content="Exemple de site web respectant les normes d'accessibilité WCAG."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-  <!--  Nikita -->
+  <body>
+    <!--  Nikita -->
 
-  <!-- Lien de saut au contenu -->
-  <a class="skip-link" href="#main-content">Passer au contenu</a>
+    <!-- Lien de saut au contenu -->
+    <a class="skip-link" href="#main-content">Passer au contenu</a>
 
-  <!-- Header + Navigation -->
-  <header>
-    <div class="navwrap" role="banner">
-      <div class="brand"><a href="./index.html" class="top-link">Chats.com</a></div>
+    <!-- Header + Navigation -->
+    <header>
+      <div class="navwrap" role="banner">
+        <div class="brand">
+          <a href="./index.html" class="top-link">Chats.com</a>
+        </div>
 
-      <!-- Bouton hamburger mobile -->
-      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="sr-only">Menu</span>
-      </button>
+        <!-- Bouton hamburger mobile -->
+        <button
+          class="menu-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
 
-      <nav role="navigation" aria-label="Menu principal">
-        <ul id="main-menu" class="menubar" role="menubar">
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="main-menu" class="menubar" role="menubar">
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-services"
+                id="btn-services"
+              >
+                <span class="menu-text">Nos services félins</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-services"
+                aria-labelledby="btn-services"
+                hidden
+              >
+                <a role="menuitem" href="/services/audit" tabindex="-1"
+                  >Surveille ton territoire</a
+                >
+                <a role="menuitem" href="/services/conseil" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation" tabindex="-1"
+                  >Cours pour chatons</a
+                >
+              </div>
+            </li>
 
-          <li role="none">
-            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
-              <span class="menu-text">Nos services félins</span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
-              <a role="menuitem" href="/services/audit" tabindex="-1">Surveille ton territoire</a>
-              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseils de chat </a>
-              <a role="menuitem" href="/services/formation" tabindex="-1">Cours pour chatons</a>
-            </div>
-          </li>
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-ressources"
+                id="btn-ressources"
+              >
+                <span class="menu-text">Trésors du chat</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-ressources"
+                aria-labelledby="btn-ressources"
+                hidden
+              >
+                <a role="menuitem" href="/docs/wcag" tabindex="-1"
+                  >Griffes et règles</a
+                >
+                <a role="menuitem" href="/docs/outils" tabindex="-1"
+                  >Jouets et accessoires</a
+                >
+                <a role="menuitem" href="/docs/checklist" tabindex="-1"
+                  >Liste du chat exigeant</a
+                >
+              </div>
+            </li>
 
-          <li role="none">
-          <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
-            <span class="menu-text">Trésors du chat</span>
-            <span class="chev" aria-hidden="true">▾</span>
-          </button>
-            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
-              <a role="menuitem" href="/docs/wcag" tabindex="-1">Griffes et règles</a>
-              <a role="menuitem" href="/docs/outils" tabindex="-1">Jouets et accessoires</a>
-              <a role="menuitem" href="/docs/checklist" tabindex="-1">Liste du chat exigeant</a>
-            </div>
-          </li>
+            <li role="none">
+              <a class="top-link" role="menuitem" href="/contact" tabindex="0"
+                >Contact</a
+              >
+            </li>
 
-          <li role="none">
-            <a class="top-link" role="menuitem" href="/contact" tabindex="0">Contact</a>
-          </li>
+            <li role="none" class="menu-search">
+              <form role="search" aria-label="Recherche sur le site">
+                <label for="site-search" class="sr-only">Recherche</label>
+                <input
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  placeholder="Rechercher..."
+                  aria-placeholder="Rechercher"
+                />
+                <button type="submit">
+                  <img src="./img/magnifying-glass-solid-full.svg" />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-          <li role="none" class="menu-search">
-            <form role="search" aria-label="Recherche sur le site">
-              <label for="site-search" class="sr-only">Recherche</label>
-              <input 
-                type="search" 
-                id="site-search" 
-                name="q" 
-                placeholder="Rechercher..." 
-                aria-placeholder="Rechercher">
-              <button type="submit"><img src="./img/magnifying-glass-solid-full.svg"></button>
-            </form>
-          </li>
+    <!-- Fil d’Ariane -->
+    <nav aria-label="Fil d’Ariane" class="breadcrumb">
+      <ol>
+        <li><a href="/accueil">Accueil</a></li>
+        <li><a href="/services">Nos services félins</a></li>
+        <li aria-current="page">Cours pour chatons</li>
+      </ol>
+    </nav>
 
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!--| Contenu principal |-->
+    <main id="main-content" role="main">
+      <!--| Form Anja |-->
+      <section id="form-contact" aria-labelledby="form-contact-title">
+        <div
+          id="error-summary"
+          role="alert"
+          aria-labelledby="error-title"
+          hidden
+        >
+          <h3 id="error-title">Veuillez corriger les erreurs ci-dessous :</h3>
+          <ul id="error-list"></ul>
+        </div>
 
-  
-  <!-- Fil d’Ariane -->
-  <nav aria-label="Fil d’Ariane" class="breadcrumb">
-    <ol>
-      <li><a href="/accueil">Accueil</a></li>
-      <li><a href="/services">Nos services félins</a></li>
-      <li aria-current="page">Cours pour chatons</li>
-    </ol>
-  </nav>
+        <!-- Formulaire Contact -->
+        <div>
+          <h2 id="form-contact-title">Contactez-nous</h2>
 
+          <form
+            id="form-contact"
+            action="#"
+            method="post"
+            aria-label="Formulaire de contact"
+            aria-describedby="form-help"
+            novalidate
+          >
+            <p id="form-help">
+              Les champs indiqués comme « (obligatoire) » doivent être
+              complétés.
+            </p>
 
-  <!--| Contenu principal |-->
-  <main id="main-content" role="main">
-    
-    <!--| Form Anja |-->
-    <section>
-      <h2>Form Anja</h2>  
-      
-    </section>
+            <!-- Informations personnelles -->
+            <fieldset>
+              <legend>Informations personnelles</legend>
 
-    <!--| Tableau Daria |-->
-    <section>
-      <h3>Tableau Daria</h3>
+              <div>
+                <label for="prenom">Prénom (obligatoire)</label>
+                <input
+                  id="prenom"
+                  name="prenom"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                  aria-describedby="prenom-err"
+                />
+                <p id="prenom-err" class="inline-error" aria-live="polite"></p>
+              </div>
 
-    </section>
+              <div>
+                <label for="nom">Nom (obligatoire)</label>
+                <input
+                  type="text"
+                  name="nom"
+                  id="nom"
+                  autocomplete="family-name"
+                  required
+                  aria-describedby="nom-err"
+                />
+                <p id="nom-err" class="inline-error" aria-live="polite"></p>
+              </div>
 
-    <section>
-      <h2>Plan du site</h2>
-      <ul>
+              <div>
+                <label for="email">Adresse e-mail (obligatoire)</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="email"
+                  required
+                  aria-describedby="email-err"
+                />
+                <p id="email-err" class="inline-error" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="tel">Téléphone (optionnel)</label>
+                <input
+                  id="tel"
+                  name="tel"
+                  type="tel"
+                  inputmode="tel"
+                  pattern="[0-9]{10}"
+                  aria-describedby="tel-help tel-err"
+                  autocomplete="tel"
+                />
+                <p id="tel-help">
+                  Entrez 10 chiffres, sans espaces (ex. 0612345678).
+                </p>
+                <p id="tel-err" class="inline-error" aria-live="polite"></p>
+              </div>
+            </fieldset>
+
+            <!-- Sujet du message -->
+            <fieldset>
+              <legend>Sujet du message</legend>
+
+              <div>
+                <label for="sujet">Sujet (obligatoire)</label>
+                <select
+                  name="sujet"
+                  id="sujet"
+                  required
+                  aria-describedby="sujet-help sujet-err"
+                >
+                  <option value="" disabled selected hidden>
+                    — Sélectionnez un sujet —
+                  </option>
+                  <optgroup label="Sujet">
+                    <option value="info">Demande d’information</option>
+                    <option value="devis">Demande de devis</option>
+                    <option value="rdv">Prendre rendez-vous</option>
+                    <option value="autre">Autre</option>
+                  </optgroup>
+                </select>
+                <p id="sujet-help" class="sr-only">
+                  Choisissez une option dans la liste. Champ obligatoire.
+                </p>
+                <p id="sujet-err" class="inline-error" aria-live="polite"></p>
+              </div>
+            </fieldset>
+
+            <!-- Message -->
+            <fieldset>
+              <legend>Message</legend>
+
+              <div>
+                <label for="message">Message (obligatoire)</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  maxlength="500"
+                  aria-describedby="msg-help message-err"
+                  required
+                ></textarea>
+                <p id="msg-help">
+                  Expliquez votre demande en quelques phrases (maximum 500
+                  caractères).
+                </p>
+                <p id="message-err" class="inline-error" aria-live="polite"></p>
+              </div>
+            </fieldset>
+
+            <!-- Consentement -->
+            <fieldset>
+              <legend>Consentement</legend>
+
+              <div class="consent-group">
+                <input
+                  type="checkbox"
+                  id="consentement"
+                  name="consentement"
+                  required
+                  aria-describedby="consentement-err"
+                />
+                <label for="consentement">
+                  J’accepte que mes informations soient utilisées pour me
+                  recontacter
+                  <span class="sr-only">(obligatoire)</span>
+                </label>
+              </div>
+
+              <p
+                id="consentement-err"
+                class="inline-error"
+                aria-live="polite"
+              ></p>
+            </fieldset>
+
+            <button type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
+
+        <!--| Tableau Daria |-->
+        <section>
+          <h3>Tableau Daria</h3>
+        </section>
+      </section>
+
+      <!--| Tableau Daria |-->
+      <section>
+        <h3>Tableau Daria</h3>
+      </section>
+
+      <section>
+        <h2>Plan du site</h2>
+        <ul>
           <li><a href="/index.html">Accueil</a></li>
           <li><a href="/mentions-legales.html">Mentions légales</a></li>
           <li><a href="/rgpd.html">Politique de confidentialité (RGPD)</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/services.html">Services</a></li>
           <li><a href="/blog.html">Blog</a></li>
-      </ul>
-    </section>
-  </main>
+        </ul>
+      </section>
+    </main>
 
-  <!---| Footer |-->
-  <footer role="contentinfo" class="footer">
-    <div class="footer__container">
-      <div class="footer__links">
-        <a href="/mentions-legales" class="footer__link">Mentions légales</a>
-        <a href="/politique-confidentialite" class="footer__link">Politique de confidentialité</a>
-        <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
-        <a href="/contact" class="footer__link">Contact</a>
+    <!---| Footer |-->
+    <footer role="contentinfo" class="footer">
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="/mentions-legales" class="footer__link">Mentions légales</a>
+          <a href="/politique-confidentialite" class="footer__link"
+            >Politique de confidentialité</a
+          >
+          <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
+          <a href="/contact" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a
+            href="https://www.facebook.com"
+            class="footer__social-link"
+            aria-label="Facebook"
+          >
+            <img
+              src="./img/social/square-facebook-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.twitter.com"
+            class="footer__social-link"
+            aria-label="Twitter"
+          >
+            <img
+              src="./img/social/square-twitter-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            class="footer__social-link"
+            aria-label="LinkedIn"
+          >
+            <img src="./img/social/linkedin-brands-solid-full.svg" alt="" />
+          </a>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Chats.com - Tous droits sont réservés.
+        </p>
       </div>
-      <div class="footer__social">
-        <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
-          <img src="./img/social/square-facebook-brands-solid-full.svg" alt="">
-        </a>
-        <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
-          <img src="./img/social/square-twitter-brands-solid-full.svg" alt="">
-        </a>
-        <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
-          <img src="./img/social/linkedin-brands-solid-full.svg" alt="">
-        </a>
-      </div>
-      <p class="footer__copyright">
-        © 2025 Chats.com - Tous droits sont réservés.
-      </p>
-    </div>
-  </footer>
+    </footer>
 
-<script src="script.js" defer></script>
-
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
