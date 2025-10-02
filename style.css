@@ -489,7 +489,276 @@ ul.site-map li a:hover {
 
 /*****| Daria |*****/
 
+#catlife-table-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color:#0f2137;
+    margin-bottom: 1rem;
+}
 
+.skip-to-table {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    background: #ffffff00;
+    color: #ffffff00;
+    margin: 4px 0 0 4px ;
+    padding: .05rem 1.25rem;
+    z-index: 100;
+    border-radius: 2px;
+    transition: top 0.1s ease;
+}
+
+.skip-to-table:focus {
+    color: #000000;
+    outline: none;
+    border: 1px solid var(--accent);
+}
+
+.cat-table:focus-visible {
+    outline: 3px solid #0b2a5b;
+    outline-offset: 4px;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px; 
+    height: 1px;
+    padding: 0; 
+    margin: -1px;
+    overflow: hidden; 
+    clip: rect(0 0 0 0);
+    white-space: nowrap; 
+    border: 0;
+}
+
+.sr-mobile {
+    display: none;
+}
+
+.sr-desktop {
+    display: inline;
+}
+
+.table-wrap { 
+    overflow-x: visible;
+}
+
+.cat-table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    overflow: hidden;
+}
+
+.cat-table thead th + th{
+    border-left: 8px solid transparent;
+    background-clip: padding-box;
+}
+
+.cat-table tbody tr td:first-of-type{
+    border-left: 8px solid transparent;
+    background-clip: padding-box;
+}
+
+.cat-table caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: 600;
+    padding: 1rem 0 1.25rem;
+    color: #3b4256;
+    margin: 0;
+}
+
+.col-head {
+    background: #0b2a5b; 
+    color: #fff; 
+    text-transform: uppercase; 
+    padding: 0.5rem 0.5rem; 
+    border-bottom: 0; 
+    position: relative; 
+    font-weight: 800;
+}
+
+.trait-badge {
+    color: #111827;
+    padding: 0.5rem 0.5rem;
+    font-weight: 700;
+    border-right: 0;
+    position: relative;
+    width: 220px;
+    text-transform: uppercase;
+    text-align: left;
+    clip-path: polygon(
+    0 0,
+    calc(100% - 25px) 0,
+    100% 50%,
+    calc(100% - 25px) 100%,
+    0 100%
+    );
+}
+
+td {
+    padding-left: 2rem;
+}
+
+.row-1 { 
+    background-color: #ffc400; 
+}
+
+.row-2 { 
+    background-color: #8bd200; 
+}
+    
+.row-3 { 
+    background-color: #00baa7; 
+}
+
+.row-4 { 
+    background-color: #60A5FA; 
+}
+
+.row-5 { 
+    background-color: #A5B4FC; 
+}
+
+.row-6 { 
+    background-color: #b4b9c8; 
+}
+
+.row-1 ~ td {
+    background-color: #ffe680;
+}
+
+.row-2 ~ td {
+    background-color: #c6f080;
+}
+
+.row-3 ~ td {
+    background-color: #80e5d8;
+}
+
+.row-4 ~ td {
+    background-color: #66c2e0;
+}
+
+.row-5 ~ td {
+    background-color: #C7D2FE;
+}
+
+.row-6 ~ td {
+    background-color: #e0e3eb;
+}
+
+@media (max-width: 640px) {
+    #catlife-table-title {
+        width: 100%;
+        font-size: 1.35rem;
+        text-align: left;
+    }
+
+    .sr-mobile {
+        display: inline;
+    }
+
+    .sr-desktop {
+        display: none;
+    }
+
+    .table-wrap { 
+    overflow: hidden;
+    }
+
+    .cat-table { width: 100%; }
+
+    .cat-table caption{
+        display: block;
+        padding: 0 0 2rem;
+        max-width: none;
+        margin: 0;
+    }
+
+    .cat-table thead {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px; width: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute;
+    }
+
+    .cat-table,
+    .cat-table tbody,
+    .cat-table tr,
+    .cat-table th,
+    .cat-table td { 
+        display: block;
+    }
+
+    .cat-table tbody tr {
+        background: transparent;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .cat-table .trait-badge {
+        width: auto;
+        clip-path: none;
+        border-radius: 6px 6px 0 0;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        letter-spacing: .02em;
+    }
+
+    .cat-table td {
+        position: relative;
+        padding: 10px 12px 10px 11rem;
+        border-left: none !important;
+        margin: 0;
+        min-height: 44px;
+        font-size: 0.95rem;
+        line-height: 1.35;
+        word-break: break-word;
+    }
+
+    .cat-table td + td {
+        margin-top: 6px;
+    }
+
+    .cat-table tbody tr td:first-of-type {
+        border-left: none;
+    }
+
+    .cat-table td::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        width: 9.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #0f2137;
+        white-space: normal;
+    }
+
+    .cat-table td:nth-of-type(1)::before {
+        content: "Munchkin (pattes courtes)";
+    }
+
+    .cat-table td:nth-of-type(2)::before {
+        content: "British Shorthair";
+    }
+
+    .cat-table td:nth-of-type(3)::before {
+        content: "Maine Coon";
+    }
+
+    .cat-table tbody tr td:last-of-type {
+        border-radius: 0 0 6px 6px;
+    }
+
+    .cat-table thead th + th,
+    .cat-table tbody tr td:first-of-type {
+        border-left: none;
+    }
+}
 
 /*****| Footer |*****/
 .footer {

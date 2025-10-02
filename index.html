@@ -23,6 +23,11 @@
     <!-- Lien de saut au contenu -->
     <a class="skip-link" href="#main-content">Passer au contenu</a>
 
+    <!-- Lien de saut à la table -->
+    <a class="skip-to-table" href="#cats-table" accesskey="t">
+      Passer au tableau
+    </a>
+
     <!-- Header + Navigation -->
     <header>
       <div class="navwrap" role="banner">
@@ -176,7 +181,82 @@
         </details>
       </section>
 
-    
+      <section class="table-section" aria-labelledby="catlife-table-title">
+        <h3 id="catlife-table-title">Caractéristiques comparées des races de chats</h3>
+        <div class="table-wrap" role="region" aria-labelledby="catlife-table-title">
+          <table id="cats-table" class="cat-table" aria-describedby="catlife-caption" tabindex="-1">
+            <caption id="catlife-caption">
+              Tableau comparatif des principales caractéristiques de trois races de chats : Munchkin, British Shorthair et Maine Coon.
+                <span class="sr-only sr-desktop">
+                  La première colonne indique les critères : espérance de vie, santé, sécurité,
+                  stimulation, coût d’achat, interaction humaine.
+                  Les colonnes suivantes correspondent aux races :
+                  2ème colonne = Munchkin, 3ème colonne = British Shorthair, 4ème colonne = Maine Coon.
+                </span>
+
+                <span class="sr-only sr-mobile">
+                  Chaque carte présente une caractéristique avec les informations
+                  pour trois races de chats : Munchkin, British Shorthair et Maine Coon.
+                  Le titre de la carte indique le critère concerné.
+                </span>
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col" class="col-trait"></th>
+                <th scope="col" class="col-head">Munchkin (pattes courtes)</th>
+                <th scope="col" class="col-head">British Shorthair</th>
+                <th scope="col" class="col-head">Maine Coon</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="trait-badge row-1">Espérance de vie</th>
+                <td>12–15 ans</td>
+                <td>12–18 ans</td>
+                <td>12–15 ans</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-2">Santé</th>
+                <td>Risques orthopédiques modérés (rachis, pattes)</td>
+                <td>Robuste, vigilance poids / cœur</td>
+                <td>HCM possible, dépistage recommandé</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-3">Sécurité</th>
+                <td>Mobilité réduite → vigilance hauteurs</td>
+                <td>Calme, peu fugueur</td>
+                <td>Grand gabarit, vigilance chutes/extérieur</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-4">Stimulation / activité</th>
+                <td>Jeux doux, puzzle-feeders</td>
+                <td>Activité modérée, jeu quotidien</td>
+                <td>Très joueur, besoin d’arbres hauts</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-5">Coût</th>
+                <td>800–1 500 €</td>
+                <td>1 000–2 000 €</td>
+                <td>1 200–2 500 €</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-6">Interaction humaine</th>
+                <td>Très proche, affectueux</td>
+                <td>Indépendant mais câlin</td>
+                <td>Sociable, “chat-chien”</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section>
         <h2>Plan du site</h2>
         <ul>
