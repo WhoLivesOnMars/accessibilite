@@ -578,11 +578,12 @@ summary {
     top: 0px;
     background: #ffffff00;
     color: #ffffff00;
-    margin: 4px 0 0 4px ;
+    margin: 9px 0 0 9px;
     padding: .05rem 1.25rem;
     z-index: 100;
     border-radius: 2px;
     transition: top 0.1s ease;
+    font-size: 0.7rem;
 }
 
 .skip-to-table:focus {
@@ -591,6 +592,7 @@ summary {
     border: 1px solid var(--accent);
 }
 
+.cat-table:focus,
 .cat-table:focus-visible {
     outline: 3px solid #0b2a5b;
     outline-offset: 4px;
