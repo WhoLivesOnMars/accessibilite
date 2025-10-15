@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibilité - Chats.com</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="../img/image.png" type="image/png" />
+  <title>Accessibilité - Chats.com</title>
+  <meta 
+    name="description" 
+    content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté." 
+  />
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
     <!-- Lien de saut au contenu -->
     <a class="skip-link" href="#main-content">Passer au contenu</a>
@@ -14,7 +26,7 @@
     <header>
         <div class="navwrap" role="banner">
             <div class="brand">
-                <a href="./index.html" class="top-link">Chats.com</a>
+                <a href="../index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
             </div>
 
             <!-- Bouton hamburger mobile -->
@@ -53,14 +65,14 @@
                     </li>
 
                     <li role="none">
-                        <a class="top-link" role="menuitem" href="contact.html" tabindex="0">Contact</a>
+                        <a class="top-link" role="menuitem" href="../contact.html" tabindex="0">Contact</a>
                     </li>
 
                     <li role="none" class="menu-search">
                         <form role="search" aria-label="Recherche sur le site">
                             <label for="site-search" class="sr-only">Recherche</label>
                             <input type="search" id="site-search" name="q" placeholder="Rechercher..." aria-placeholder="Rechercher">
-                            <button type="submit"><img src="./img/magnifying-glass-solid-full.svg" alt="Bouton rechercher"></button>
+                            <button type="submit"><img src="../img/magnifying-glass-solid-full.svg" alt="Bouton rechercher"></button>
                         </form>
                     </li>
 
@@ -69,7 +81,16 @@
         </div>
     </header>
 
+    <!-- Contenu principal -->
     <main id="main-content" role="main">
+
+        <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
+            <ol>
+                <li><a href="/">Accueil</a></li>
+                <li aria-current="page">Accessibilité</li>
+            </ol>
+        </nav>
+
         <h1>Accessibilité sur Chats.com</h1>
 
         <p>Ce site s’efforce de rendre ses contenus accessibles conformément aux normes <span class="highlight">WCAG 2.1</span> et <span class="highlight">RGAA 4.0</span>.</p>
@@ -113,7 +134,7 @@
     <footer role="contentinfo" class="footer">
         <div class="footer__container">
             <div class="footer__links">
-                <a href="./index.html">Accueil</a>
+                <a href="../index.html">Accueil</a>
                 <a href="./mentions-legales.html" class="footer__link">Mentions légales</a>
                 <a href="./rgpd.html" class="footer__link">Politique de confidentialité</a>
                 <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
@@ -121,13 +142,13 @@
             </div>
             <div class="footer__social">
                 <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
-                    <img src="./img/social/square-facebook-brands-solid-full.svg" alt="Logo Facebook">
+                    <img src="../img/social/square-facebook-brands-solid-full.svg" alt="Logo Facebook">
                 </a>
                 <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
-                    <img src="./img/social/square-twitter-brands-solid-full.svg" alt="Logo Twitter">
+                    <img src="../img/social/square-twitter-brands-solid-full.svg" alt="Logo Twitter">
                 </a>
                 <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
-                    <img src="./img/social/linkedin-brands-solid-full.svg" alt="Logo LinkedIn">
+                    <img src="../img/social/linkedin-brands-solid-full.svg" alt="Logo LinkedIn">
                 </a>
             </div>
             <p class="footer__copyright">
@@ -136,6 +157,6 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="../script.js" defer></script>
 </body>
 </html>

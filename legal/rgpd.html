@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentions légales</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="../img/image.png" type="image/png" />
+  <title>Politique de confidentialité - Chats.com</title>
+  <meta 
+    name="description" 
+    content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté." 
+  />
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
   <!-- Lien de saut au contenu -->
   <a class="skip-link" href="#main-content">Passer au contenu</a>
@@ -14,10 +26,9 @@
   <header>
     <div class="navwrap" role="banner">
       <div class="brand">
-        <a href="./index.html" class="top-link">Chats.com</a>
+        <a href="../index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
       </div>
 
-      <!-- Bouton hamburger mobile -->
       <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Ouvrir le menu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -52,7 +63,7 @@
           </li>
 
           <li role="none">
-            <a class="top-link" role="menuitem" href="contact.html" tabindex="0">Contact</a>
+            <a class="top-link" role="menuitem" href="../contact.html" tabindex="0">Contact</a>
           </li>
 
           <li role="none" class="menu-search">
@@ -65,7 +76,7 @@
                 placeholder="Rechercher..." 
                 aria-placeholder="Rechercher">
               <button type="submit" aria-label="Rechercher">
-                <img src="./img/magnifying-glass-solid-full.svg" alt="">
+                <img src="../img/magnifying-glass-solid-full.svg" alt="">
               </button>
             </form>
           </li>
@@ -76,6 +87,14 @@
 
   <!-- Contenu principal -->
   <main id="main-content" role="main">
+
+    <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
+      <ol>
+          <li><a href="/">Accueil</a></li>
+          <li aria-current="page">Politique de confidentialité</li>
+      </ol>
+    </nav>
+
     <h1>Mentions légales</h1>
     <p>Conformément à la loi, voici les informations légales concernant ce site :</p>
 
@@ -111,7 +130,7 @@
   <footer role="contentinfo" class="footer">
     <div class="footer__container">
       <div class="footer__links">
-        <a href="./index.html">Accueil</a>
+        <a href="../index.html">Accueil</a>
         <a href="./mentions-legales.html" class="footer__link">Mentions légales</a>
         <a href="./rgpd.html" class="footer__link">Politique de confidentialité</a>
         <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
@@ -120,13 +139,13 @@
 
       <div class="footer__social">
         <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
-          <img src="./img/social/square-facebook-brands-solid-full.svg" alt="">
+          <img src="../img/social/square-facebook-brands-solid-full.svg" alt="">
         </a>
         <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
-          <img src="./img/social/square-twitter-brands-solid-full.svg" alt="">
+          <img src="../img/social/square-twitter-brands-solid-full.svg" alt="">
         </a>
         <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
-          <img src="./img/social/linkedin-brands-solid-full.svg" alt="">
+          <img src="../img/social/linkedin-brands-solid-full.svg" alt="">
         </a>
       </div>
 
@@ -136,6 +155,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="../script.js" defer></script>
 </body>
 </html>

@@ -19,20 +19,14 @@
   </head>
 
   <body>
-
     <!-- Lien de saut au contenu -->
     <a class="skip-link" href="#main-content">Passer au contenu</a>
-
-    <!-- Lien de saut à la table -->
-    <a class="skip-to-table" href="#cats-table" accesskey="t">
-      Passer au tableau
-    </a>
 
     <!-- Header + Navigation -->
     <header>
       <div class="navwrap" role="banner">
         <div class="brand">
-          <a href="./index.html" class="top-link">Chats.com</a>
+          <a href="./index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
         </div>
 
         <!-- Bouton hamburger mobile -->
@@ -142,10 +136,8 @@
   <!--| Contenu principal |-->
   <main id="main-content" role="main"> 
 
-      <h1>Chats.com</h1>
-
-      <section class="section-first-image" aria-labelledby="titre-image">
-        <h2 id="titre-image">Bienvenue sur Chat.com</h2>
+    <section class="section-first-image" aria-labelledby="titre-image">
+        <h1 id="titre-image">Bienvenue sur Chat.com</h1>
 
         <!-- Image décorative -->
         <figure>
@@ -278,96 +270,15 @@
     </table>
   </div>
 </section>
-
-
-
-<section id="plan-site" aria-labelledby="plan-site-title">
-  <h2 id="plan-site-title">Plan du site</h2>
-  <ul>
-    <li>
-      <a href="/index.html">Accueil</a>
-      <ul>
-        <li>
-          <a href="#main-content">Chats.com (H1)</a>
-          <ul>
-            <li>
-              <a href="#titre-image">Bienvenue sur Chat.com</a>
-            </li>
-            <li>
-              <a href="#video-titre">Les 10 races de chats les plus rares (H2)</a>
-            </li>
-            <li>
-              <a href="#catlife-table-title">Caractéristiques comparées des races de chats (H2)</a>
-            </li>
-            <li>
-              <a href="#plan-site">Plan du site (H2)</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="/mentions-legales.html">Mentions légales</a>
-      <ul>
-        <li><a href="#main-content">Mentions légales (H1)</a></li>
-        <li><a href="#editeur">Éditeur du site (H2)</a></li>
-        <li><a href="#hebergement">Hébergement (H2)</a></li>
-        <li><a href="#propriete-intellectuelle">Propriété intellectuelle (H2)</a></li>
-        <li><a href="#responsabilite">Responsabilité (H2)</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="/rgpd.html">Politique de confidentialité (RGPD)</a>
-      <ul>
-        <li><a href="#rgpd-h1">Politique de confidentialité (H1)</a></li>
-        <li><a href="#rgpd-collecte">Collecte des données (H2)</a></li>
-        <li><a href="#rgpd-utilisation">Utilisation des données (H2)</a></li>
-        <li><a href="#rgpd-droits">Droits des utilisateurs (H2)</a></li>
-        <li><a href="#rgpd-contact">Contact RGPD (H2)</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="./accessibilite.html">Accessibilité</a>
-      <ul>
-        <li><a href="#main-content">Accessibilité sur Chats.com (H1)</a></li>
-        <li><a href="#conformite">Conformité et normes (H2)</a></li>
-        <li><a href="#limitations">Limitations de l’accessibilité (H2)</a></li>
-        <li><a href="#fonctionnalites">Fonctionnalités d’accessibilité (H2)</a></li>
-        <li><a href="#contact-accessibilite">Contact pour signaler des problèmes (H2)</a></li>
-        <li><a href="#mises-a-jour">Mises à jour (H2)</a></li>
-        <li><a href="#ressources">Ressources supplémentaires (H2)</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <a href="./contact.html">Contact</a>
-      <ul>
-        <li><a href="#form-contact-title">Contactez-nous (H2)</a></li>
-        <li><a href="#informations-personnelles">Informations personnelles (fieldset)</a></li>
-        <li><a href="#sujet-message">Sujet du message (fieldset)</a></li>
-        <li><a href="#message">Message (fieldset)</a></li>
-        <li><a href="#consentement">Consentement (fieldset)</a></li>
-      </ul>
-    </li>
-  </ul>
-</section>
-
-
-
     </main>
 
     <!---| Footer |-->
     <footer role="contentinfo" class="footer">
       <div class="footer__container">
         <div class="footer__links">
-          <a href="mentions-legales.html" class="footer__link">Mentions légales</a>
-          <a href="./rgpd.html" class="footer__link"
-            >Politique de confidentialité</a
-          >
-          <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
+          <a href="./legal/mentions-legales.html" class="footer__link">Mentions légales</a>
+          <a href="./legal/rgpd.html" class="footer__link">Politique de confidentialité</a>
+          <a href="./legal/accessibilite.html" class="footer__link">Accessibilité</a>
           <a href="./contact.html" class="footer__link">Contact</a>
         </div>
         <div class="footer__social">

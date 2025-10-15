@@ -3,14 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/image.png" type="image/png" />
     <title>Contact</title>
+    <meta 
+      name="description" 
+      content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté." 
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+
+
+  <body> 
+    <!-- Lien de saut au contenu -->
+    <a class="skip-link" href="#main-content">Passer au contenu</a>
+
+    <!-- Header + Navigation -->
     <header>
       <div class="navwrap" role="banner">
         <div class="brand">
-          <a href="./index.html" class="top-link">Chats.com</a>
+          <a href="./index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
         </div>
 
         <!-- Bouton hamburger mobile -->
@@ -91,7 +108,7 @@
               <a
                 class="top-link"
                 role="menuitem"
-                href="contact.html"
+                href="./contact.html"
                 tabindex="0"
                 >Contact</a
               >
@@ -108,7 +125,7 @@
                   aria-placeholder="Rechercher"
                 />
                 <button type="submit">
-                  <img src="./img/magnifying-glass-solid-full.svg" />
+                  <img src="./img/magnifying-glass-solid-full.svg" alt="Rechercher" />
                 </button>
               </form>
             </li>
@@ -117,6 +134,7 @@
       </div>
     </header>
 
+    <!-- Contenu principal -->
     <main>
       <section id="form-contact" aria-labelledby="form-contact-title">
         <div
@@ -125,13 +143,13 @@
           aria-labelledby="error-title"
           hidden
         >
-          <h3 id="error-title">Veuillez corriger les erreurs ci-dessous :</h3>
+          <h2 id="error-title">Veuillez corriger les erreurs ci-dessous :</h2>
           <ul id="error-list"></ul>
         </div>
 
         <!-- Formulaire Contact -->
         <div>
-          <h2 id="form-contact-title">Contactez-nous</h2>
+          <h1 id="form-contact-title">Contactez-nous</h1>
 
           <form
             id="form-contact"
