@@ -1,4 +1,3 @@
-// Hamburger
 const toggle = document.querySelector('.menu-toggle');
 const menubar = document.querySelector('.menubar');
 
@@ -8,14 +7,12 @@ toggle.addEventListener('click', () => {
     menubar.classList.toggle('show');
 });
 
-// Menu principal et sous-menus
 const mainButtons = Array.from(document.querySelectorAll('.menu-button, .top-link'));
 
 mainButtons.forEach((btn, index) => {
     const submenu = document.getElementById(btn.getAttribute('aria-controls'));
     const items = submenu ? Array.from(submenu.querySelectorAll('[role="menuitem"]')) : [];
 
-    // Initialisation du sous-menu
     if (submenu) {
         items.forEach(mi => mi.setAttribute('tabindex', '-1'));
         submenu.setAttribute('aria-hidden', 'true');
@@ -28,11 +25,9 @@ mainButtons.forEach((btn, index) => {
         btn.setAttribute('aria-expanded', 'false');
     };
 
-    // Click sur le bouton principal
     btn.addEventListener('click', () => {
         if (!submenu) return;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
-        // Fermer tous les autres sous-menus
         document.querySelectorAll('.menu-button').forEach(b => {
             if (b !== btn) {
                 const s = document.getElementById(b.getAttribute('aria-controls'));
@@ -49,7 +44,6 @@ mainButtons.forEach((btn, index) => {
         }
     });
 
-    // Navigation clavier sur le bouton principal
     btn.addEventListener('keydown', e => {
         if (e.key === 'ArrowDown') {
             e.preventDefault();
@@ -61,10 +55,12 @@ mainButtons.forEach((btn, index) => {
             items[items.length - 1]?.focus();
         } else if (e.key === 'ArrowRight') {
             e.preventDefault();
-            mainButtons[(index + 1) % mainButtons.length].focus();
+            const next = mainButtons[(index + 1) % mainButtons.length];
+            next.focus();
         } else if (e.key === 'ArrowLeft') {
             e.preventDefault();
-            mainButtons[(index - 1 + mainButtons.length) % mainButtons.length].focus();
+            const prev = mainButtons[(index - 1 + mainButtons.length) % mainButtons.length];
+            prev.focus();
         } else if (e.key === 'Escape') {
             e.preventDefault();
             closeMenu();
@@ -81,43 +77,37 @@ mainButtons.forEach((btn, index) => {
 if (submenu) {
     submenu.addEventListener('keydown', e => {
         const idx = items.indexOf(document.activeElement);
-
-        switch (e.key) {
-            case 'ArrowDown':
-                e.preventDefault();
-                items[(idx + 1) % items.length].focus();
-                break;
-
-            case 'ArrowUp':
-                e.preventDefault();
-                items[(idx - 1 + items.length) % items.length].focus();
-                break;
-
-            case 'ArrowLeft':
-            case 'ArrowRight':
-                e.preventDefault();
-                // NE FAIT RIEN ! Reste sur l'item actuel du sous-menu
-                break;
-
-            case 'Escape':
-                e.preventDefault();
-                closeMenu();
-                btn.focus(); // Retour au bouton parent
-                break;
-
-            case 'Tab':
-                setTimeout(() => {
-                    if (!submenu.contains(document.activeElement) && document.activeElement !== btn) {
-                        closeMenu();
-                    }
-                }, 0);
-                break;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            items[(idx + 1) % items.length].focus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            items[(idx - 1 + items.length) % items.length].focus();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            closeMenu();
+            btn.focus();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            closeMenu();
+            const mainButtons = Array.from(document.querySelectorAll('.menu-button, .top-link'));
+            const btnIndex = mainButtons.indexOf(btn);
+            const nextBtn = mainButtons[(btnIndex + 1) % mainButtons.length];
+            nextBtn.focus();
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeMenu();
+            btn.focus();
+        } else if (e.key === 'Tab') {
+            setTimeout(() => {
+                if (!submenu.contains(document.activeElement) && document.activeElement !== btn) {
+                    closeMenu();
+                }
+            }, 0);
         }
     });
 
 
-
-        // Fermer le sous-menu si on sort du focus
         submenu.addEventListener('focusout', () => {
             setTimeout(() => {
                 if (!submenu.contains(document.activeElement) && document.activeElement !== btn) {
