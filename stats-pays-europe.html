@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistiques des foyers possédant un chat en Europe - Chats.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header + Navigation -->
+  <header>
+    <div class="navwrap" role="banner">
+      <div class="brand">
+        <a href="./index.html" class="top-link">Chats.com</a>
+      </div>
+
+      <!-- Bouton hamburger mobile -->
+      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <ul id="main-menu" class="menubar" role="menubar">
+
+          <li role="none">
+            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
+              <span class="menu-text">Nos services félins</span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
+              <a role="menuitem" href="/services/audit" tabindex="-1">Surveille ton territoire</a>
+              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseils de chat</a>
+              <a role="menuitem" href="/services/formation" tabindex="-1">Cours pour chatons</a>
+            </div>
+          </li>
+
+          <li role="none">
+            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
+              <span class="menu-text">Trésors du chat</span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
+              <a role="menuitem" href="/docs/wcag" tabindex="-1">Griffes et règles</a>
+              <a role="menuitem" href="/docs/outils" tabindex="-1">Jouets et accessoires</a>
+              <a role="menuitem" href="/docs/checklist" tabindex="-1">Liste du chat exigeant</a>
+            </div>
+          </li>
+
+          <li role="none">
+            <a class="top-link" role="menuitem" href="contact.html" tabindex="0">Contact</a>
+          </li>
+
+          <li role="none" class="menu-search">
+            <form role="search" aria-label="Recherche sur le site">
+              <label for="site-search" class="sr-only">Recherche</label>
+              <input type="search" id="site-search" name="q" placeholder="Rechercher..." aria-placeholder="Rechercher">
+              <button type="submit"><img src="./img/magnifying-glass-solid-full.svg" alt="Bouton rechercher"></button>
+            </form>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" role="main">
+    <section aria-labelledby="stats-europe-titre">
+      <h2 id="stats-europe-titre">Pourcentage de foyers possédant un chat en 2021</h2>
+
+      <p>
+        Cette page présente les données détaillées par pays pour la possession de chats en Europe.
+      </p>
+
+      <table>
+        <caption>Pourcentage de foyers possédant au moins un chat en Europe en 2021 selon FEDIAF</caption>
+        <thead>
+          <tr>
+            <th scope="col">Pays</th>
+            <th scope="col">Pourcentage de foyers avec un chat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Roumanie</th><td>48%</td></tr>
+          <tr><th scope="row">Pologne</th><td>41%</td></tr>
+          <tr><th scope="row">Hongrie</th><td>34%</td></tr>
+          <tr><th scope="row">France</th><td>33%</td></tr>
+          <tr><th scope="row">Slovénie</th><td>32%</td></tr>
+          <tr><th scope="row">Portugal</th><td>32%</td></tr>
+          <tr><th scope="row">Lituanie</th><td>32%</td></tr>
+          <tr><th scope="row">Italie</th><td>22%</td></tr>
+          <tr><th scope="row">Allemagne</th><td>21%</td></tr>
+          <tr><th scope="row">Espagne</th><td>17%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        <a href="index.html#main-content">Retour à l'accueil</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="footer">
+    <div class="footer__container">
+      <div class="footer__links">
+        <a href="./index.html">Accueil</a>
+        <a href="./mentions-legales.html" class="footer__link">Mentions légales</a>
+        <a href="./rgpd.html" class="footer__link">Politique de confidentialité</a>
+        <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
+        <a href="contact.html" class="footer__link">Contact</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
+          <img src="./img/social/square-facebook-brands-solid-full.svg" alt="Logo Facebook">
+        </a>
+        <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
+          <img src="./img/social/square-twitter-brands-solid-full.svg" alt="Logo Twitter">
+        </a>
+        <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
+          <img src="./img/social/linkedin-brands-solid-full.svg" alt="Logo LinkedIn">
+        </a>
+      </div>
+      <p class="footer__copyright">
+        © 2025 Chats.com - Tous droits sont réservés.
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
