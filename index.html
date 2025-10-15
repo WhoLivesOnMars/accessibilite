@@ -133,24 +133,25 @@
       </div>
     </header>
 
-  <!--| Contenu principal |-->
-  <main id="main-content" role="main"> 
+    <!--| Contenu principal |-->
+    <main id="main-content" class="main-index" role="main"> 
 
-    <section class="section-first-image" aria-labelledby="titre-image">
-        <h1 id="titre-image">Bienvenue sur Chat.com</h1>
+      <section class="section-first-image" aria-labelledby="titre-image">
+        <h1 id="titre-image">Bienvenue sur <strong>Chats.com</strong></h1>
 
         <!-- Image décorative -->
         <figure>
           <img src="./img/miaou.jpg" alt="">
         </figure>
 
+
         <!-- Image informative (graphique) -->
-        <figure>
-          <img src="./img/stat-chat.jpeg" 
-              alt="Graphique montrant la proportion de foyers possédant un chat en Europe en 2021, voir le lien ci-dessous pour les statistiques complètes.">
+        <h2 id="graphique-europe">Proportion de foyers possédant un chat en Europe</h2>
+        <figure class="figure-graphique">
+          <img src="./img/stat-chat.jpeg" alt="Graphique montrant la proportion ...">
           <figcaption>
             Graphique représentant le pourcentage de foyers possédant un chat en Europe en 2021. 
-            <a href="stats-pays-europe.html">Voir les statistiques détaillées par pays</a>
+            <a href="./pages-cache/stats-pays-europe.html">Voir les statistiques détaillées par pays</a>
           </figcaption>
         </figure>
       </section>
@@ -158,7 +159,7 @@
 
 
       <section aria-labelledby="video-titre">
-        <h2 id="video-titre">Les 10 races de chats les plus rares</h2>
+        <h2 id="video-titre">Vidéo présentant les 10 races de chats les plus rares du monde</h2>
         
         <div class="video-container">
           <iframe 
@@ -188,88 +189,92 @@
         </details>
       </section>
 
-<section class="table-section" aria-labelledby="catlife-table-title">
-  <h2 id="catlife-table-title">Caractéristiques comparées des races de chats</h2>
 
-  <!-- Lien vers le tableau 100% accessible -->
-  <p class="accessible-link">
-    <a href="tableau-accessible.html">
-      Voir le tableau complet 100% accessible au clavier et lecteur d’écran
-    </a>
-  </p>
 
-  <div class="table-wrap" role="region" aria-labelledby="catlife-table-title">
-    <table id="cats-table" class="cat-table" aria-describedby="catlife-caption">
-      <caption id="catlife-caption">
-        Tableau comparatif des principales caractéristiques de trois races de chats : Munchkin, British Shorthair et Maine Coon.
-        <span class="sr-only sr-desktop">
-          La première colonne indique les critères : espérance de vie, santé, sécurité,
-          stimulation, coût d’achat, interaction humaine.
-          Les colonnes suivantes correspondent aux races :
-          2ème colonne = Munchkin, 3ème colonne = British Shorthair, 4ème colonne = Maine Coon.
-        </span>
-        <span class="sr-only sr-mobile">
-          Chaque carte présente une caractéristique avec les informations
-          pour trois races de chats : Munchkin, British Shorthair et Maine Coon.
-          Le titre de la carte indique le critère concerné.
-        </span>
-      </caption>
+        
+      <section class="table-section" aria-labelledby="catlife-table-title">
+        <h2 id="catlife-table-title">Caractéristiques comparées des races de chats</h2>
 
-      <thead>
-        <tr>
-          <th scope="col" class="col-trait"></th>
-          <th scope="col" class="col-head">Munchkin (pattes courtes)</th>
-          <th scope="col" class="col-head">British Shorthair</th>
-          <th scope="col" class="col-head">Maine Coon</th>
-        </tr>
-      </thead>
+        <!-- Lien vers le tableau 100% accessible -->
+        <p class="accessible-link">
+          <a href="./pages-cache/tableau-accessible.html">
+            Voir le tableau complet 100% accessible au clavier et lecteur d’écran
+          </a>
+        </p>
 
-      <tbody>
-        <tr>
-          <th scope="row" class="trait-badge row-1">Espérance de vie</th>
-          <td>12–15 ans</td>
-          <td>12–18 ans</td>
-          <td>12–15 ans</td>
-        </tr>
+        <div class="table-wrap" role="region" aria-labelledby="catlife-table-title">
+          <table id="cats-table" class="cat-table" aria-describedby="catlife-caption">
+            <caption id="catlife-caption">
+              Tableau comparatif des principales caractéristiques de trois races de chats : Munchkin, British Shorthair et Maine Coon.
+              <span class="sr-only sr-desktop">
+                La première colonne indique les critères : espérance de vie, santé, sécurité,
+                stimulation, coût d’achat, interaction humaine.
+                Les colonnes suivantes correspondent aux races :
+                2ème colonne = Munchkin, 3ème colonne = British Shorthair, 4ème colonne = Maine Coon.
+              </span>
+              <span class="sr-only sr-mobile">
+                Chaque carte présente une caractéristique avec les informations
+                pour trois races de chats : Munchkin, British Shorthair et Maine Coon.
+                Le titre de la carte indique le critère concerné.
+              </span>
+            </caption>
 
-        <tr>
-          <th scope="row" class="trait-badge row-2">Santé</th>
-          <td>Risques orthopédiques modérés (rachis, pattes)</td>
-          <td>Robuste, vigilance poids / cœur</td>
-          <td>HCM possible, dépistage recommandé</td>
-        </tr>
+            <thead>
+              <tr>
+                <th scope="col" class="col-trait"></th>
+                <th scope="col" class="col-head">Munchkin (pattes courtes)</th>
+                <th scope="col" class="col-head">British Shorthair</th>
+                <th scope="col" class="col-head">Maine Coon</th>
+              </tr>
+            </thead>
 
-        <tr>
-          <th scope="row" class="trait-badge row-3">Sécurité</th>
-          <td>Mobilité réduite → vigilance hauteurs</td>
-          <td>Calme, peu fugueur</td>
-          <td>Grand gabarit, vigilance chutes/extérieur</td>
-        </tr>
+            <tbody>
+              <tr>
+                <th scope="row" class="trait-badge row-1">Espérance de vie</th>
+                <td>12–15 ans</td>
+                <td>12–18 ans</td>
+                <td>12–15 ans</td>
+              </tr>
 
-        <tr>
-          <th scope="row" class="trait-badge row-4">Stimulation / activité</th>
-          <td>Jeux doux, puzzle-feeders</td>
-          <td>Activité modérée, jeu quotidien</td>
-          <td>Très joueur, besoin d’arbres hauts</td>
-        </tr>
+              <tr>
+                <th scope="row" class="trait-badge row-2">Santé</th>
+                <td>Risques orthopédiques modérés (rachis, pattes)</td>
+                <td>Robuste, vigilance poids / cœur</td>
+                <td>HCM possible, dépistage recommandé</td>
+              </tr>
 
-        <tr>
-          <th scope="row" class="trait-badge row-5">Coût</th>
-          <td>800–1 500 €</td>
-          <td>1 000–2 000 €</td>
-          <td>1 200–2 500 €</td>
-        </tr>
+              <tr>
+                <th scope="row" class="trait-badge row-3">Sécurité</th>
+                <td>Mobilité réduite → vigilance hauteurs</td>
+                <td>Calme, peu fugueur</td>
+                <td>Grand gabarit, vigilance chutes/extérieur</td>
+              </tr>
 
-        <tr>
-          <th scope="row" class="trait-badge row-6">Interaction humaine</th>
-          <td>Très proche, affectueux</td>
-          <td>Indépendant mais câlin</td>
-          <td>Sociable, “chat-chien”</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+              <tr>
+                <th scope="row" class="trait-badge row-4">Stimulation / activité</th>
+                <td>Jeux doux, puzzle-feeders</td>
+                <td>Activité modérée, jeu quotidien</td>
+                <td>Très joueur, besoin d’arbres hauts</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-5">Coût</th>
+                <td>800–1 500 €</td>
+                <td>1 000–2 000 €</td>
+                <td>1 200–2 500 €</td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="trait-badge row-6">Interaction humaine</th>
+                <td>Très proche, affectueux</td>
+                <td>Indépendant mais câlin</td>
+                <td>Sociable, “chat-chien”</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
     </main>
 
     <!---| Footer |-->
