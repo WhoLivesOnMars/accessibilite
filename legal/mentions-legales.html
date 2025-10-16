@@ -1,150 +1,254 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="icon" href="../img/image.png" type="image/png" />
-  <title>Mentions légales - Chats.com</title>
-  <meta 
-    name="description" 
-    content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté." 
-  />
-  <link rel="stylesheet" href="../style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/image.png" type="image/png" />
+    <title>Mentions légales - Chats.com</title>
+    <meta
+      name="description"
+      content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
-<body>
-  <!-- Lien de saut au contenu -->
-  <a class="skip-link" href="#main-content">Passer au contenu</a>
+  <body>
+    <!-- Lien de saut au contenu -->
+    <a class="skip-link" href="#main-content">Passer au contenu</a>
 
-  <!-- Header + Navigation -->
-  <header>
-    <div class="navwrap" role="banner">
-      <div class="brand">
-        <a href="../index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
+    <!-- Header + Navigation -->
+    <header>
+      <div class="navwrap" role="banner">
+        <div class="brand">
+          <a
+            href="/index.html"
+            class="top-link"
+            aria-label="Retour à la page d’accueil"
+            >Chats.com</a
+          >
+        </div>
+
+        <!-- Bouton hamburger mobile -->
+        <button
+          class="menu-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="main-menu" class="menubar" role="menubar">
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-services"
+                id="btn-services"
+              >
+                <span class="menu-text">Nos services félins</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-services"
+                aria-labelledby="btn-services"
+                hidden
+              >
+                <a role="menuitem" href="/services/audit.html" tabindex="-1"
+                  >Surveille ton territoire</a
+                >
+                <a role="menuitem" href="/services/conseil.html" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation.html" tabindex="-1"
+                  >Cours pour chatons</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-ressources"
+                id="btn-ressources"
+              >
+                <span class="menu-text">Trésors du chat</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-ressources"
+                aria-labelledby="btn-ressources"
+                hidden
+              >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/wcag.html"
+                  tabindex="-1"
+                  >Griffes et règles</a
+                >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/outils.html"
+                  tabindex="-1"
+                  >Jouets et accessoires</a
+                >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/checklist.html"
+                  tabindex="-1"
+                  >Liste du chat exigeant</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <a
+                class="top-link"
+                role="menuitem"
+                href="/contact.html"
+                tabindex="0"
+                >Contact</a
+              >
+            </li>
+
+            <li role="none" class="menu-search">
+              <form role="search" aria-label="Recherche sur le site">
+                <label for="site-search" class="sr-only">Recherche</label>
+                <input
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  placeholder="Rechercher..."
+                  aria-placeholder="Rechercher"
+                />
+                <button type="submit">
+                  <img
+                    src="/img/magnifying-glass-solid-full.svg"
+                    alt="Rechercher"
+                  />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-
-      <nav role="navigation" aria-label="Menu principal">
-        <ul id="main-menu" class="menubar" role="menubar">
-
-          <li role="none">
-            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
-              <span class="menu-text">Nos services félins</span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
-              <a role="menuitem" href="/services/audit" tabindex="-1">Surveille ton territoire</a>
-              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseils de chat</a>
-              <a role="menuitem" href="/services/formation" tabindex="-1">Cours pour chatons</a>
-            </div>
-          </li>
-
-          <li role="none">
-            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
-              <span class="menu-text">Trésors du chat</span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
-              <a role="menuitem" href="/docs/wcag" tabindex="-1">Griffes et règles</a>
-              <a role="menuitem" href="/docs/outils" tabindex="-1">Jouets et accessoires</a>
-              <a role="menuitem" href="/docs/checklist" tabindex="-1">Liste du chat exigeant</a>
-            </div>
-          </li>
-
-          <li role="none">
-            <a class="top-link" role="menuitem" href="../contact.html" tabindex="0">Contact</a>
-          </li>
-
-          <li role="none" class="menu-search">
-            <form role="search" aria-label="Recherche sur le site">
-              <label for="site-search" class="sr-only">Recherche</label>
-              <input type="search" id="site-search" name="q" placeholder="Rechercher..." aria-placeholder="Rechercher">
-              <button type="submit"><img src="../img/magnifying-glass-solid-full.svg" alt="Bouton rechercher"></button>
-            </form>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contenu principal -->
-  <main id="main-content" role="main">
-
-    <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
-      <ol>
+    <!-- Contenu principal -->
+    <main id="main-content" role="main">
+      <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
+        <ol>
           <li><a href="/">Accueil</a></li>
           <li aria-current="page">Mentions légales</li>
-      </ol>
-    </nav>
+        </ol>
+      </nav>
 
-    <p>Conformément à la loi, voici les informations légales concernant ce site :</p>
-
-    <h1>Mentions légales</h1>
-
-    <h2>Éditeur du site</h2>
-    <p>
-      Nom : MonSite<br>
-      Responsable : Anja Nikit<br>
-      Adresse : 123 Rue Exemple, 75000 Paris, France<br>
-      Email : <a href="mailto:contact@monsite.fr">contact@monsite.fr</a><br>
-      Téléphone : 01 23 45 67 89
-    </p>
-
-    <h2>Hébergement</h2>
-    <p>
-      Le site est hébergé par :<br>
-      Hébergeur : Exemple Hosting<br>
-      Adresse : 45 Rue Hébergeur, 75000 Paris, France<br>
-      Téléphone : 01 23 45 67 00
-    </p>
-
-    <h2>Propriété intellectuelle</h2>
-    <p>Le contenu de ce site (textes, images, logos, etc.) est protégé par le droit d'auteur. Toute reproduction, même partielle, est interdite sans autorisation.</p>
-
-    <h2>Responsabilité</h2>
-    <p>L’éditeur ne peut être tenu responsable des dommages liés à l’usage du site ou à l’accès à des sites externes via des liens.</p>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo" class="footer">
-    <div class="footer__container">
-      <div class="footer__links">
-        <a href="../index.html">Accueil</a>
-        <a href="./mentions-legales.html" class="footer__link">Mentions légales</a>
-        <a href="./rgpd.html" class="footer__link">Politique de confidentialité</a>
-        <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
-        <a href="contact.html" class="footer__link">Contact</a>
-      </div>
-      <div class="footer__social">
-        <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
-          <img src="../img/social/square-facebook-brands-solid-full.svg" alt="Logo Facebook">
-        </a>
-        <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
-          <img src="../img/social/square-twitter-brands-solid-full.svg" alt="Logo Twitter">
-        </a>
-        <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
-          <img src="../img/social/linkedin-brands-solid-full.svg" alt="Logo LinkedIn">
-        </a>
-      </div>
-      <p class="footer__copyright">
-        © 2025 Chats.com - Tous droits sont réservés.
+      <p>
+        Conformément à la loi, voici les informations légales concernant ce site
+        :
       </p>
-    </div>
-  </footer>
 
-  <script src="../script.js" defer></script>
-</body>
+      <h1>Mentions légales</h1>
+
+      <h2>Éditeur du site</h2>
+      <p>
+        Nom : MonSite<br />
+        Responsable : Anja Nikit<br />
+        Adresse : 123 Rue Exemple, 75000 Paris, France<br />
+        Email : <a href="mailto:contact@monsite.fr">contact@monsite.fr</a><br />
+        Téléphone : 01 23 45 67 89
+      </p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé par :<br />
+        Hébergeur : Exemple Hosting<br />
+        Adresse : 45 Rue Hébergeur, 75000 Paris, France<br />
+        Téléphone : 01 23 45 67 00
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        Le contenu de ce site (textes, images, logos, etc.) est protégé par le
+        droit d'auteur. Toute reproduction, même partielle, est interdite sans
+        autorisation.
+      </p>
+
+      <h2>Responsabilité</h2>
+      <p>
+        L’éditeur ne peut être tenu responsable des dommages liés à l’usage du
+        site ou à l’accès à des sites externes via des liens.
+      </p>
+    </main>
+
+    <!---| Footer |-->
+    <footer role="contentinfo" class="footer">
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="/plan.html" class="footer__link">Plan du site</a>
+
+          <a href="/legal/mentions-legales.html" class="footer__link"
+            >Mentions légales</a
+          >
+          <a href="/legal/rgpd.html" class="footer__link"
+            >Politique de confidentialité</a
+          >
+          <a href="/legal/accessibilite.html" class="footer__link"
+            >Accessibilité</a
+          >
+          <a href="/contact.html" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a
+            href="https://www.facebook.com"
+            class="footer__social-link"
+            aria-label="Facebook"
+          >
+            <img
+              src="/img/social/square-facebook-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.twitter.com"
+            class="footer__social-link"
+            aria-label="Twitter"
+          >
+            <img
+              src="/img/social/square-twitter-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            class="footer__social-link"
+            aria-label="LinkedIn"
+          >
+            <img src="/img/social/linkedin-brands-solid-full.svg" alt="" />
+          </a>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Chats.com - Tous droits sont réservés.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+  </body>
 </html>

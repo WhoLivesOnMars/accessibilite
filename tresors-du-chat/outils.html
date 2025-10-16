@@ -22,20 +22,24 @@
     <!-- Lien de saut au contenu -->
     <a class="skip-link" href="#main">Passer au contenu</a>
 
-    <!-- Header + Navigation (même structure que ta page) -->
+    <!-- Header + Navigation -->
     <header>
       <div class="navwrap" role="banner">
         <div class="brand">
-          <a href="/index.html" class="top-link">Chats.com</a>
+          <a href="/" class="top-link" aria-label="Retour à la page d’accueil"
+            >Chats.com</a
+          >
         </div>
 
+        <!-- Bouton hamburger mobile -->
         <button
           class="menu-toggle"
           aria-controls="main-menu"
           aria-expanded="false"
         >
-          <span class="bar"></span><span class="bar"></span
-          ><span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
           <span class="sr-only">Menu</span>
         </button>
 
@@ -59,13 +63,13 @@
                 aria-labelledby="btn-services"
                 hidden
               >
-                <a role="menuitem" href="/services/audit" tabindex="-1"
+                <a role="menuitem" href="/services/audit.html" tabindex="-1"
                   >Surveille ton territoire</a
                 >
-                <a role="menuitem" href="/services/conseil" tabindex="-1"
-                  >Conseils de chat</a
-                >
-                <a role="menuitem" href="/services/formation" tabindex="-1"
+                <a role="menuitem" href="/services/conseil.html" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation.html" tabindex="-1"
                   >Cours pour chatons</a
                 >
               </div>
@@ -89,13 +93,22 @@
                 aria-labelledby="btn-ressources"
                 hidden
               >
-                <a role="menuitem" href="/docs/wcag" tabindex="-1"
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/wcag.html"
+                  tabindex="-1"
                   >Griffes et règles</a
                 >
-                <a role="menuitem" href="/docs/outils" tabindex="-1"
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/outils.html"
+                  tabindex="-1"
                   >Jouets et accessoires</a
                 >
-                <a role="menuitem" href="/docs/checklist" tabindex="-1"
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/checklist.html"
+                  tabindex="-1"
                   >Liste du chat exigeant</a
                 >
               </div>
@@ -115,14 +128,17 @@
               <form role="search" aria-label="Recherche sur le site">
                 <label for="site-search" class="sr-only">Recherche</label>
                 <input
+                  type="search"
                   id="site-search"
                   name="q"
-                  type="search"
                   placeholder="Rechercher..."
                   aria-placeholder="Rechercher"
                 />
                 <button type="submit">
-                  <img src="/img/magnifying-glass-solid-full.svg" alt="" />
+                  <img
+                    src="./img/magnifying-glass-solid-full.svg"
+                    alt="Rechercher"
+                  />
                 </button>
               </form>
             </li>
@@ -279,18 +295,22 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!---| Footer |-->
     <footer role="contentinfo" class="footer">
       <div class="footer__container">
         <div class="footer__links">
-          <a href="/mentions-legales.html" class="footer__link"
+          <a href="./plan.html" class="footer__link">Plan du site</a>
+
+          <a href="./legal/mentions-legales.html" class="footer__link"
             >Mentions légales</a
           >
-          <a href="/rgpd.html" class="footer__link"
+          <a href="./legal/rgpd.html" class="footer__link"
             >Politique de confidentialité</a
           >
-          <a href="/accessibilite.html" class="footer__link">Accessibilité</a>
-          <a href="/contact.html" class="footer__link">Contact</a>
+          <a href="./legal/accessibilite.html" class="footer__link"
+            >Accessibilité</a
+          >
+          <a href="./contact.html" class="footer__link">Contact</a>
         </div>
         <div class="footer__social">
           <a
@@ -299,7 +319,7 @@
             aria-label="Facebook"
           >
             <img
-              src="/img/social/square-facebook-brands-solid-full.svg"
+              src="./img/social/square-facebook-brands-solid-full.svg"
               alt=""
             />
           </a>
@@ -309,7 +329,7 @@
             aria-label="Twitter"
           >
             <img
-              src="/img/social/square-twitter-brands-solid-full.svg"
+              src="./img/social/square-twitter-brands-solid-full.svg"
               alt=""
             />
           </a>
@@ -318,7 +338,7 @@
             class="footer__social-link"
             aria-label="LinkedIn"
           >
-            <img src="/img/social/linkedin-brands-solid-full.svg" alt="" />
+            <img src="./img/social/linkedin-brands-solid-full.svg" alt="" />
           </a>
         </div>
         <p class="footer__copyright">
@@ -326,7 +346,6 @@
         </p>
       </div>
     </footer>
-
     <script src="../../script.js" defer></script>
   </body>
 </html>

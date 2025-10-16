@@ -1,179 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="icon" href="../img/image.png" type="image/png" />
-  <title>Tableau accessible sous forme de liste</title>
-  <meta 
-    name="description" 
-    content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté." 
-  />
-  <link rel="stylesheet" href="../style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bytesized&family=Cairo:wght@200..1000&family=Iceland&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/image.png" type="image/png" />
+    <title>Tableau accessible sous forme de liste</title>
+    <meta
+      name="description"
+      content="Découvrez un site dédié aux chats, avec des informations, vidéos et contenus accessibles sur les races de chats, leurs particularités et leur rareté."
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
+  <body>
+    <!-- Lien de saut au contenu -->
+    <a class="skip-link" href="#main-content">Passer au contenu</a>
 
-<body>
-  <!-- Lien de saut au contenu -->
-  <a class="skip-link" href="#main-content">Passer au contenu</a>
+    <!-- Header + Navigation -->
+    <header>
+      <div class="navwrap" role="banner">
+        <div class="brand">
+          <a
+            href="/index.html"
+            class="top-link"
+            aria-label="Retour à la page d’accueil"
+            >Chats.com</a
+          >
+        </div>
 
-  <!-- Header + Navigation -->
-  <header>
-    <div class="navwrap" role="banner">
-      <div class="brand">
-        <a href="../index.html" class="top-link" aria-label="Retour à la page d’accueil">Chats.com</a>
-      </div>
+        <!-- Bouton hamburger mobile -->
+        <button
+          class="menu-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
 
-      <button class="menu-toggle" aria-controls="main-menu" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-
-      <nav role="navigation" aria-label="Menu principal">
-        <ul id="main-menu" class="menubar" role="menubar">
-          <li role="none">
-            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-services" id="btn-services">
-              <span class="menu-text">Nos services félins</span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="submenu" role="menu" id="submenu-services" aria-labelledby="btn-services" hidden>
-              <a role="menuitem" href="/services/audit" tabindex="-1">Surveille ton territoire</a>
-              <a role="menuitem" href="/services/conseil" tabindex="-1">Conseils de chat</a>
-              <a role="menuitem" href="/services/formation" tabindex="-1">Cours pour chatons</a>
-            </div>
-          </li>
-
-          <li role="none">
-            <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-ressources" id="btn-ressources">
-              <span class="menu-text">Trésors du chat</span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="submenu" role="menu" id="submenu-ressources" aria-labelledby="btn-ressources" hidden>
-              <a role="menuitem" href="/docs/wcag" tabindex="-1">Griffes et règles</a>
-              <a role="menuitem" href="/docs/outils" tabindex="-1">Jouets et accessoires</a>
-              <a role="menuitem" href="/docs/checklist" tabindex="-1">Liste du chat exigeant</a>
-            </div>
-          </li>
-
-          <li role="none">
-            <a class="top-link" role="menuitem" href="../contact.html" tabindex="0">Contact</a>
-          </li>
-
-          <li role="none" class="menu-search">
-            <form role="search" aria-label="Recherche sur le site">
-              <label for="site-search" class="sr-only">Recherche</label>
-              <input 
-                type="search" 
-                id="site-search" 
-                name="q" 
-                placeholder="Rechercher..." 
-                aria-placeholder="Rechercher">
-              <button type="submit" aria-label="Rechercher">
-                <img src="../img/magnifying-glass-solid-full.svg" alt="">
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="main-menu" class="menubar" role="menubar">
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-services"
+                id="btn-services"
+              >
+                <span class="menu-text">Nos services félins</span>
+                <span class="chev" aria-hidden="true">▾</span>
               </button>
-            </form>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-services"
+                aria-labelledby="btn-services"
+                hidden
+              >
+                <a role="menuitem" href="/services/audit.html" tabindex="-1"
+                  >Surveille ton territoire</a
+                >
+                <a role="menuitem" href="/services/conseil.html" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation.html" tabindex="-1"
+                  >Cours pour chatons</a
+                >
+              </div>
+            </li>
 
-  <main id="main-content" role="main">
-    <section aria-labelledby="accessible-list-title">
-      <h1 id="accessible-list-title">Caractéristiques comparées des races de chats</h1>
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-ressources"
+                id="btn-ressources"
+              >
+                <span class="menu-text">Trésors du chat</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-ressources"
+                aria-labelledby="btn-ressources"
+                hidden
+              >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/wcag.html"
+                  tabindex="-1"
+                  >Griffes et règles</a
+                >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/outils.html"
+                  tabindex="-1"
+                  >Jouets et accessoires</a
+                >
+                <a
+                  role="menuitem"
+                  href="/tresors-du-chat/checklist.html"
+                  tabindex="-1"
+                  >Liste du chat exigeant</a
+                >
+              </div>
+            </li>
 
-      <p>
-        <a href="index.html">Retour à l'accueil</a>
-      </p>
+            <li role="none">
+              <a
+                class="top-link"
+                role="menuitem"
+                href="/contact.html"
+                tabindex="0"
+                >Contact</a
+              >
+            </li>
 
-      <p>
-        Cette version présente les informations sous forme de liste, plus facile à naviguer pour les lecteurs d’écran.
-      </p>
-
-      <ul>
-        <h2>Espérance de vie</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : 12–15 ans</li>
-          <li>British Shorthair : 12–18 ans</li>
-          <li>Maine Coon : 12–15 ans</li>
-        </ul>
-
-        <h2>Santé</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : Risques orthopédiques modérés (rachis, pattes)</li>
-          <li>British Shorthair : Robuste, vigilance poids / cœur</li>
-          <li>Maine Coon : HCM possible, dépistage recommandé</li>
-        </ul>
-
-        <h2>Sécurité</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : Mobilité réduite → vigilance hauteurs</li>
-          <li>British Shorthair : Calme, peu fugueur</li>
-          <li>Maine Coon : Grand gabarit, vigilance chutes/extérieur</li>
-        </ul>
-
-        <h2>Stimulation / activité</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : Jeux doux, puzzle-feeders</li>
-          <li>British Shorthair : Activité modérée, jeu quotidien</li>
-          <li>Maine Coon : Très joueur, besoin d’arbres hauts</li>
-        </ul>
-
-
-        <h2>Coût</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : 800–1 500 €</li>
-          <li>British Shorthair : 1 000–2 000 €</li>
-          <li>Maine Coon : 1 200–2 500 €</li>
-        </ul>
-
-
-        <h2>Interaction humaine</h2>
-        <ul>
-          <li>Munchkin (pattes courtes) : Très proche, affectueux</li>
-          <li>British Shorthair : Indépendant mais câlin</li>
-          <li>Maine Coon : Sociable, “chat-chien”</li>
-        </ul>
-
-      </ul>
-    </section>
-  </main>
-
-<!-- Footer -->
-  <footer role="contentinfo" class="footer">
-    <div class="footer__container">
-      <div class="footer__links">
-        <a href="../index.html">Accueil</a>
-        <a href="./mentions-legales.html" class="footer__link">Mentions légales</a>
-        <a href="./rgpd.html" class="footer__link">Politique de confidentialité</a>
-        <a href="./accessibilite.html" class="footer__link">Accessibilité</a>
-        <a href="contact.html" class="footer__link">Contact</a>
+            <li role="none" class="menu-search">
+              <form role="search" aria-label="Recherche sur le site">
+                <label for="site-search" class="sr-only">Recherche</label>
+                <input
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  placeholder="Rechercher..."
+                  aria-placeholder="Rechercher"
+                />
+                <button type="submit">
+                  <img
+                    src="/img/magnifying-glass-solid-full.svg"
+                    alt="Rechercher"
+                  />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <div class="footer__social">
-        <a href="https://www.facebook.com" class="footer__social-link" aria-label="Facebook">
-          <img src="../img/social/square-facebook-brands-solid-full.svg" alt="">
-        </a>
-        <a href="https://www.twitter.com" class="footer__social-link" aria-label="Twitter">
-          <img src="../img/social/square-twitter-brands-solid-full.svg" alt="">
-        </a>
-        <a href="https://www.linkedin.com" class="footer__social-link" aria-label="LinkedIn">
-          <img src="../img/social/linkedin-brands-solid-full.svg" alt="">
-        </a>
+    <main id="main-content" role="main">
+      <section aria-labelledby="accessible-list-title">
+        <h1 id="accessible-list-title">
+          Caractéristiques comparées des races de chats
+        </h1>
+
+        <p>
+          <a href="index.html">Retour à l'accueil</a>
+        </p>
+
+        <p>
+          Cette version présente les informations sous forme de liste, plus
+          facile à naviguer pour les lecteurs d’écran.
+        </p>
+
+        <ul>
+          <h2>Espérance de vie</h2>
+          <ul>
+            <li>Munchkin (pattes courtes) : 12–15 ans</li>
+            <li>British Shorthair : 12–18 ans</li>
+            <li>Maine Coon : 12–15 ans</li>
+          </ul>
+
+          <h2>Santé</h2>
+          <ul>
+            <li>
+              Munchkin (pattes courtes) : Risques orthopédiques modérés (rachis,
+              pattes)
+            </li>
+            <li>British Shorthair : Robuste, vigilance poids / cœur</li>
+            <li>Maine Coon : HCM possible, dépistage recommandé</li>
+          </ul>
+
+          <h2>Sécurité</h2>
+          <ul>
+            <li>
+              Munchkin (pattes courtes) : Mobilité réduite → vigilance hauteurs
+            </li>
+            <li>British Shorthair : Calme, peu fugueur</li>
+            <li>Maine Coon : Grand gabarit, vigilance chutes/extérieur</li>
+          </ul>
+
+          <h2>Stimulation / activité</h2>
+          <ul>
+            <li>Munchkin (pattes courtes) : Jeux doux, puzzle-feeders</li>
+            <li>British Shorthair : Activité modérée, jeu quotidien</li>
+            <li>Maine Coon : Très joueur, besoin d’arbres hauts</li>
+          </ul>
+
+          <h2>Coût</h2>
+          <ul>
+            <li>Munchkin (pattes courtes) : 800–1 500 €</li>
+            <li>British Shorthair : 1 000–2 000 €</li>
+            <li>Maine Coon : 1 200–2 500 €</li>
+          </ul>
+
+          <h2>Interaction humaine</h2>
+          <ul>
+            <li>Munchkin (pattes courtes) : Très proche, affectueux</li>
+            <li>British Shorthair : Indépendant mais câlin</li>
+            <li>Maine Coon : Sociable, “chat-chien”</li>
+          </ul>
+        </ul>
+      </section>
+    </main>
+
+    <!---| Footer |-->
+    <footer role="contentinfo" class="footer">
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="/plan.html" class="footer__link">Plan du site</a>
+
+          <a href="/legal/mentions-legales.html" class="footer__link"
+            >Mentions légales</a
+          >
+          <a href="/legal/rgpd.html" class="footer__link"
+            >Politique de confidentialité</a
+          >
+          <a href="/legal/accessibilite.html" class="footer__link"
+            >Accessibilité</a
+          >
+          <a href="/contact.html" class="footer__link">Contact</a>
+        </div>
+        <div class="footer__social">
+          <a
+            href="https://www.facebook.com"
+            class="footer__social-link"
+            aria-label="Facebook"
+          >
+            <img
+              src="/img/social/square-facebook-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.twitter.com"
+            class="footer__social-link"
+            aria-label="Twitter"
+          >
+            <img
+              src="/img/social/square-twitter-brands-solid-full.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            class="footer__social-link"
+            aria-label="LinkedIn"
+          >
+            <img src="/img/social/linkedin-brands-solid-full.svg" alt="" />
+          </a>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Chats.com - Tous droits sont réservés.
+        </p>
       </div>
-
-      <p class="footer__copyright">
-        © 2025 Chats.com - Tous droits sont réservés.
-      </p>
-    </div>
-  </footer>
-</body>
+    </footer>
+    <script src="/script.js"></script>
+  </body>
 </html>
