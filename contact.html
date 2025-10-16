@@ -159,9 +159,13 @@
           <li aria-current="page">Contact</li>
         </ol>
       </nav>
-      <section id="form-contact" aria-labelledby="form-contact-title">
+
+      <!-- Section Contact -->
+      <section id="contact-section" aria-labelledby="contact-title">
+        <!-- Résumé d'erreurs -->
         <div
           id="error-summary"
+          class="error-summary"
           role="alert"
           aria-labelledby="error-title"
           hidden
@@ -170,164 +174,203 @@
           <ul id="error-list"></ul>
         </div>
 
-        <!-- Formulaire Contact -->
-        <div>
-          <h1 id="form-contact-title">Contactez-nous</h1>
+        <h1 id="contact-title">Contactez-nous</h1>
 
-          <form
-            id="form-contact"
-            action="#"
-            method="post"
-            aria-label="Formulaire de contact"
-            aria-describedby="form-help"
-            novalidate
-          >
-            <p id="form-help">
-              Les champs indiqués comme « (obligatoire) » doivent être
-              complétés.
-            </p>
+        <form
+          id="contact-form"
+          action="#"
+          method="post"
+          aria-describedby="form-help"
+          novalidate
+        >
+          <p id="form-help">
+            Les champs marqués « <span aria-hidden="true">(obligatoire)</span> »
+            sont requis.
+          </p>
 
-            <!-- Informations personnelles -->
-            <fieldset>
-              <legend>Informations personnelles</legend>
+          <!-- Informations personnelles -->
+          <fieldset>
+            <legend>Informations personnelles</legend>
 
-              <div>
-                <label for="prenom">Prénom (obligatoire)</label>
-                <input
-                  id="prenom"
-                  name="prenom"
-                  type="text"
-                  autocomplete="given-name"
-                  required
-                  aria-describedby="prenom-err"
-                />
-                <p id="prenom-err" class="inline-error" aria-live="polite"></p>
+            <div class="form-group">
+              <label for="prenom"
+                >Prénom <span aria-hidden="true">(obligatoire)</span></label
+              >
+              <p id="prenom-hint" class="hint">
+                Saisissez votre prénom. Longueur minimale&nbsp;:
+                <strong>2 caractères</strong>.
+              </p>
+              <input
+                id="prenom"
+                name="prenom"
+                type="text"
+                autocomplete="given-name"
+                required
+                minlength="2"
+                aria-describedby="prenom-hint prenom-err"
+                aria-errormessage="prenom-err"
+              />
+              <p id="prenom-err" class="inline-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="nom"
+                >Nom <span aria-hidden="true">(obligatoire)</span></label
+              >
+              <p id="nom-hint" class="hint">
+                Saisissez votre nom de famille. Longueur minimale&nbsp;:
+                <strong>2 caractères</strong>.
+              </p>
+              <input
+                type="text"
+                name="nom"
+                id="nom"
+                autocomplete="family-name"
+                required
+                minlength="2"
+                aria-describedby="nom-hint nom-err"
+                aria-errormessage="nom-err"
+              />
+              <p id="nom-err" class="inline-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="email"
+                >Adresse e-mail
+                <span aria-hidden="true">(obligatoire)</span></label
+              >
+              <p id="email-hint" class="hint">
+                Format attendu : nom@domaine.fr
+              </p>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                required
+                aria-describedby="email-hint email-err"
+                aria-errormessage="email-err"
+                inputmode="email"
+              />
+              <p id="email-err" class="inline-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="tel"
+                >Téléphone <span class="optional">(facultatif)</span></label
+              >
+              <p id="tel-hint" class="hint">
+                Vous pouvez commencer par l’indicatif pays (ex. +33) et utiliser
+                des espaces, tirets ou parenthèses.<br />
+                Exemples valides : <code>+33 6 12 34 56 78</code>,
+                <code>06 12 34 56 78</code>.
+              </p>
+              <input
+                id="tel"
+                name="tel"
+                type="tel"
+                inputmode="tel"
+                aria-describedby="tel-hint tel-err"
+                aria-errormessage="tel-err"
+                autocomplete="tel"
+                pattern="^\\+?\\d(?:[ \\-]?\\d|\\(\\d+\\)|\\d){8,14}$"
+              />
+              <p id="tel-err" class="inline-error" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- Objet -->
+          <fieldset>
+            <legend>Objet de la demande</legend>
+
+            <div class="form-group">
+              <label for="sujet"
+                >Objet <span aria-hidden="true">(obligatoire)</span></label
+              >
+              <p id="sujet-hint" class="hint">
+                Choisissez l’objet le plus proche de votre besoin.
+              </p>
+              <select
+                name="sujet"
+                id="sujet"
+                required
+                aria-describedby="sujet-hint sujet-err"
+                aria-errormessage="sujet-err"
+              >
+                <option value="" disabled selected hidden>
+                  — Sélectionnez —
+                </option>
+                <optgroup label="Options">
+                  <option value="info">Demande d’information</option>
+                  <option value="devis">Demande de devis</option>
+                  <option value="rdv">Prendre rendez-vous</option>
+                  <option value="autre">Autre</option>
+                </optgroup>
+              </select>
+              <p id="sujet-err" class="inline-error" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <!-- Message -->
+          <fieldset>
+            <legend>Votre message</legend>
+
+            <div class="form-group">
+              <label for="message"
+                >Message <span aria-hidden="true">(obligatoire)</span></label
+              >
+              <p id="message-hint" class="hint">
+                Décrivez votre demande en quelques phrases. Longueur max :
+                <strong>500</strong> caractères.
+              </p>
+              <div class="charinfo" aria-live="polite" id="message-count">
+                0 / 500
               </div>
+              <textarea
+                name="message"
+                id="message"
+                rows="5"
+                maxlength="500"
+                required
+                aria-describedby="message-hint message-count message-err"
+                aria-errormessage="message-err"
+              ></textarea>
+              <p id="message-err" class="inline-error" aria-live="polite"></p>
+            </div>
+          </fieldset>
 
-              <div>
-                <label for="nom">Nom (obligatoire)</label>
-                <input
-                  type="text"
-                  name="nom"
-                  id="nom"
-                  autocomplete="family-name"
-                  required
-                  aria-describedby="nom-err"
-                />
-                <p id="nom-err" class="inline-error" aria-live="polite"></p>
-              </div>
+          <!-- Consentement -->
+          <fieldset>
+            <legend>Consentement</legend>
 
-              <div>
-                <label for="email">Adresse e-mail (obligatoire)</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  autocomplete="email"
-                  required
-                  aria-describedby="email-err"
-                />
-                <p id="email-err" class="inline-error" aria-live="polite"></p>
-              </div>
+            <div class="form-group consent-group">
+              <input
+                type="checkbox"
+                id="consentement"
+                name="consentement"
+                required
+                aria-describedby="consentement-hint consentement-err"
+                aria-errormessage="consentement-err"
+              />
+              <label for="consentement">
+                J’accepte que mes informations soient utilisées pour me
+                recontacter
+                <span class="sr-only">(obligatoire)</span>
+              </label>
+              <p id="consentement-hint" class="hint">
+                Vos données ne seront pas partagées en dehors de notre
+                organisation.
+              </p>
+            </div>
+            <p
+              id="consentement-err"
+              class="inline-error"
+              aria-live="polite"
+            ></p>
+          </fieldset>
 
-              <div>
-                <label for="tel">Téléphone (optionnel)</label>
-                <input
-                  id="tel"
-                  name="tel"
-                  type="tel"
-                  inputmode="tel"
-                  pattern="[0-9]{10}"
-                  aria-describedby="tel-help tel-err"
-                  autocomplete="tel"
-                />
-                <p id="tel-help">
-                  Entrez 10 chiffres, sans espaces (ex. 0612345678).
-                </p>
-                <p id="tel-err" class="inline-error" aria-live="polite"></p>
-              </div>
-            </fieldset>
-
-            <!-- Sujet du message -->
-            <fieldset>
-              <legend>Sujet du message</legend>
-
-              <div>
-                <label for="sujet">Sujet (obligatoire)</label>
-                <select
-                  name="sujet"
-                  id="sujet"
-                  required
-                  aria-describedby="sujet-help sujet-err"
-                >
-                  <option value="" disabled selected hidden>
-                    — Sélectionnez un sujet —
-                  </option>
-                  <optgroup label="Sujet">
-                    <option value="info">Demande d’information</option>
-                    <option value="devis">Demande de devis</option>
-                    <option value="rdv">Prendre rendez-vous</option>
-                    <option value="autre">Autre</option>
-                  </optgroup>
-                </select>
-                <p id="sujet-help" class="sr-only">
-                  Choisissez une option dans la liste. Champ obligatoire.
-                </p>
-                <p id="sujet-err" class="inline-error" aria-live="polite"></p>
-              </div>
-            </fieldset>
-
-            <!-- Message -->
-            <fieldset>
-              <legend>Message</legend>
-
-              <div>
-                <label for="message">Message (obligatoire)</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="5"
-                  maxlength="500"
-                  aria-describedby="msg-help message-err"
-                  required
-                ></textarea>
-                <p id="msg-help">
-                  Expliquez votre demande en quelques phrases (maximum 500
-                  caractères).
-                </p>
-                <p id="message-err" class="inline-error" aria-live="polite"></p>
-              </div>
-            </fieldset>
-
-            <!-- Consentement -->
-            <fieldset>
-              <legend>Consentement</legend>
-
-              <div class="consent-group">
-                <input
-                  type="checkbox"
-                  id="consentement"
-                  name="consentement"
-                  required
-                  aria-describedby="consentement-err"
-                />
-                <label for="consentement">
-                  J’accepte que mes informations soient utilisées pour me
-                  recontacter
-                  <span class="sr-only">(obligatoire)</span>
-                </label>
-              </div>
-
-              <p
-                id="consentement-err"
-                class="inline-error"
-                aria-live="polite"
-              ></p>
-            </fieldset>
-
-            <button type="submit">Envoyer ma demande</button>
-          </form>
-        </div>
+          <button type="submit">Envoyer ma demande</button>
+        </form>
       </section>
     </main>
 
