@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plan du site – Chats.com</title>
+    <meta
+      name="description"
+      content="Plan du site de Chats.com : retrouvez l’ensemble des pages et rubriques."
+    />
+    <link rel="icon" href="/img/image.png" type="image/png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Lien de saut -->
+    <a class="skip-link" href="#main">Passer au contenu</a>
+
+    <!-- En-tête minimal (tu peux inclure ton header global si tu utilises des includes) -->
+    <!-- Header + Navigation -->
+    <header>
+      <div class="navwrap" role="banner">
+        <div class="brand">
+          <a
+            href="./index.html"
+            class="top-link"
+            aria-label="Retour à la page d’accueil"
+            >Chats.com</a
+          >
+        </div>
+
+        <!-- Bouton hamburger mobile -->
+        <button
+          class="menu-toggle"
+          aria-controls="main-menu"
+          aria-expanded="false"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <nav role="navigation" aria-label="Menu principal">
+          <ul id="main-menu" class="menubar" role="menubar">
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-services"
+                id="btn-services"
+              >
+                <span class="menu-text">Nos services félins</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-services"
+                aria-labelledby="btn-services"
+                hidden
+              >
+                <a role="menuitem" href="/services/audit" tabindex="-1"
+                  >Surveille ton territoire</a
+                >
+                <a role="menuitem" href="/services/conseil" tabindex="-1"
+                  >Conseils de chat
+                </a>
+                <a role="menuitem" href="/services/formation" tabindex="-1"
+                  >Cours pour chatons</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <button
+                class="menu-button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="submenu-ressources"
+                id="btn-ressources"
+              >
+                <span class="menu-text">Trésors du chat</span>
+                <span class="chev" aria-hidden="true">▾</span>
+              </button>
+              <div
+                class="submenu"
+                role="menu"
+                id="submenu-ressources"
+                aria-labelledby="btn-ressources"
+                hidden
+              >
+                <a role="menuitem" href="/docs/wcag" tabindex="-1"
+                  >Griffes et règles</a
+                >
+                <a role="menuitem" href="/docs/outils" tabindex="-1"
+                  >Jouets et accessoires</a
+                >
+                <a role="menuitem" href="/docs/checklist" tabindex="-1"
+                  >Liste du chat exigeant</a
+                >
+              </div>
+            </li>
+
+            <li role="none">
+              <a
+                class="top-link"
+                role="menuitem"
+                href="./contact.html"
+                tabindex="0"
+                >Contact</a
+              >
+            </li>
+
+            <li role="none" class="menu-search">
+              <form role="search" aria-label="Recherche sur le site">
+                <label for="site-search" class="sr-only">Recherche</label>
+                <input
+                  type="search"
+                  id="site-search"
+                  name="q"
+                  placeholder="Rechercher..."
+                  aria-placeholder="Rechercher"
+                />
+                <button type="submit">
+                  <img
+                    src="./img/magnifying-glass-solid-full.svg"
+                    alt="Rechercher"
+                  />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" role="main" class="main-content">
+      <h1>Plan du site</h1>
+      <p>
+        Retrouvez ici l’ensemble des pages et rubriques de
+        <strong>Chats.com</strong>.
+      </p>
+
+      <!-- Navigation principale -->
+      <section aria-labelledby="rub-accueil">
+        <h2 id="rub-accueil">Accueil</h2>
+        <ul>
+          <li><a href="/">Page d’accueil</a></li>
+          <li>
+            <a href="/pages-cache/stats-pays-europe.html"
+              >Statistiques détaillées par pays (Europe)</a
+            >
+          </li>
+          <li>
+            <a href="/pages-cache/tableau-accessible.html"
+              >Tableau comparatif – version 100% accessible</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="rub-services">
+        <h2 id="rub-services">Nos services félins</h2>
+        <ul>
+          <li><a href="/services/audit">Surveille ton territoire</a></li>
+          <li><a href="/services/conseil">Conseils de chat</a></li>
+          <li><a href="/services/formation">Cours pour chatons</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="rub-ressources">
+        <h2 id="rub-ressources">Trésors du chat (Ressources)</h2>
+        <ul>
+          <li><a href="/docs/wcag">Griffes et règles</a></li>
+          <li><a href="/docs/outils">Jouets et accessoires</a></li>
+          <li><a href="/docs/checklist">Liste du chat exigeant</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="rub-contact">
+        <h2 id="rub-contact">Contact</h2>
+        <ul>
+          <li><a href="/contact.html">Formulaire de contact</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="rub-legal">
+        <h2 id="rub-legal">Informations légales</h2>
+        <ul>
+          <li><a href="/legal/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/legal/rgpd.html">Politique de confidentialité</a></li>
+          <li><a href="/legal/accessibilite.html">Accessibilité</a></li>
+        </ul>
+      </section>
+
+      <!-- Aide à la recherche -->
+      <section aria-labelledby="rub-recherche">
+        <h2 id="rub-recherche">Recherche</h2>
+        <p>
+          Vous pouvez rechercher un contenu via le champ prévu à cet effet dans
+          l’en-tête du site.
+        </p>
+      </section>
+
+      <hr aria-hidden="true" />
+
+      <p>
+        <small
+          >Dernière mise à jour :
+          <time datetime="2025-10-16">16 octobre 2025</time></small
+        >
+      </p>
+    </main>
+
+    <!-- Pied de page (option : réutiliser ton footer global) -->
+    <footer role="contentinfo" class="footer">
+      <div class="footer__container">
+        <div class="footer__links">
+          <a href="/legal/mentions-legales.html" class="footer__link"
+            >Mentions légales</a
+          >
+          <a href="/legal/rgpd.html" class="footer__link"
+            >Politique de confidentialité</a
+          >
+          <a href="/legal/accessibilite.html" class="footer__link"
+            >Accessibilité</a
+          >
+          <a href="/contact.html" class="footer__link">Contact</a>
+          <a href="/plan-du-site.html" class="footer__link" aria-current="page"
+            >Plan du site</a
+          >
+        </div>
+        <p class="footer__copyright">
+          © 2025 Chats.com - Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+    <!-- (Optionnel) Données structurées pour la navigation du site -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Chats.com",
+        "url": "https://example.com/",
+        "hasPart": [
+          {
+            "@type": "WebPage",
+            "name": "Surveille ton territoire",
+            "url": "/services/audit"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Conseils de chat",
+            "url": "/services/conseil"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Cours pour chatons",
+            "url": "/services/formation"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Griffes et règles",
+            "url": "/docs/wcag"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Jouets et accessoires",
+            "url": "/docs/outils"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Liste du chat exigeant",
+            "url": "/docs/checklist"
+          },
+          { "@type": "WebPage", "name": "Contact", "url": "/contact.html" },
+          {
+            "@type": "WebPage",
+            "name": "Mentions légales",
+            "url": "/legal/mentions-legales.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Politique de confidentialité",
+            "url": "/legal/rgpd.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Accessibilité",
+            "url": "/legal/accessibilite.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Statistiques par pays (Europe)",
+            "url": "/pages-cache/stats-pays-europe.html"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Tableau comparatif accessible",
+            "url": "/pages-cache/tableau-accessible.html"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>
