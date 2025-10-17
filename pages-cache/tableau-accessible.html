@@ -150,71 +150,107 @@
       </div>
     </header>
 
-    <main id="main-content" role="main">
-      <section aria-labelledby="accessible-list-title">
-        <h1 id="accessible-list-title">
+  <main id="main">
+    <!-- Fil d’Ariane -->
+    <nav class="breadcrumb wrap" aria-label="Fil d’ariane">
+      <ol>
+        <li><a href="/">Accueil</a></li>
+        <li aria-current="page">Caractéristiques de chats</li>
+      </ol>
+    </nav>
+
+    <section class="a11y-table-section" aria-labelledby="a11y-table-title">
+        <h1 id="a11y-table-title" class="a11y-table-title">
           Caractéristiques comparées des races de chats
         </h1>
 
-        <p>
-          <a href="index.html">Retour à l'accueil</a>
+        <p class="sr-only" id="a11y-advice">
+          Conseil accessibilité : vous pouvez parcourir le tableau cellule par cellule avec la touche Tab (et Maj+Tab pour revenir). Les lecteurs d’écran supportent aussi Ctrl+Alt + flèches.
         </p>
 
-        <p>
-          Cette version présente les informations sous forme de liste, plus
-          facile à naviguer pour les lecteurs d’écran.
-        </p>
+        <div class="a11y-table-wrap" role="region" aria-labelledby="a11y-table-title">
+          <table id="a11y-table" aria-describedby="table-caption a11y-advice">
+            <caption id="table-caption">
+              Tableau comparatif des principales caractéristiques de trois races : Munchkin, Britannique à poil court et Maine Coon.
+              <span class="sr-only sr-desktop">
+                La première colonne indique les critères : espérance de vie, santé, sécurité, stimulation, coût d’achat, interaction humaine.
+                Les colonnes suivantes correspondent aux races : 2ème colonne = Munchkin, 3ème colonne = Britannique à poil court, 4ème colonne = Maine Coon.
+              </span>
+              <span class="sr-only sr-mobile">
+                Chaque carte présente une caractéristique avec les informations
+                pour trois races de chats : Munchkin, Britannique à poil court et Maine
+                Coon. Le titre de la carte indique le critère concerné.
+              </span>
+            </caption>
 
-        <ul>
-          <h2>Espérance de vie</h2>
-          <ul>
-            <li>Munchkin (pattes courtes) : 12–15 ans</li>
-            <li>British Shorthair : 12–18 ans</li>
-            <li>Maine Coon : 12–15 ans</li>
-          </ul>
+            <thead>
+              <tr>
+                <th scope="col" id="col-crit" tabindex="0">Critères</th>
+                <th scope="col" id="col-munchkin" tabindex="0">Munchkin</th>
+                <th scope="col" id="col-bpc" tabindex="0">Britannique à poil court</th>
+                <th scope="col" id="col-maine" tabindex="0">Maine Coon</th>
+              </tr>
+            </thead>
 
-          <h2>Santé</h2>
-          <ul>
-            <li>
-              Munchkin (pattes courtes) : Risques orthopédiques modérés (rachis,
-              pattes)
-            </li>
-            <li>British Shorthair : Robuste, vigilance poids / cœur</li>
-            <li>Maine Coon : HCM possible, dépistage recommandé</li>
-          </ul>
+            <tbody>
+              <tr>
+                <th scope="row" id="row-vie" tabindex="0">Espérance de vie</th>
+                <td headers="row-vie col-munchkin" tabindex="0" data-label="Munchkin">12–15 ans</td>
+                <td headers="row-vie col-bpc" tabindex="0" data-label="Britannique à poil court">12–18 ans</td>
+                <td headers="row-vie col-maine" tabindex="0" data-label="Maine Coon">12–15 ans</td>
+              </tr>
 
-          <h2>Sécurité</h2>
-          <ul>
-            <li>
-              Munchkin (pattes courtes) : Mobilité réduite → vigilance hauteurs
-            </li>
-            <li>British Shorthair : Calme, peu fugueur</li>
-            <li>Maine Coon : Grand gabarit, vigilance chutes/extérieur</li>
-          </ul>
+              <tr>
+                <th scope="row" id="row-sante" tabindex="0">Santé</th>
+                <td headers="row-sante col-munchkin" tabindex="0" data-label="Munchkin">Risques orthopédiques modérés (rachis, pattes)</td>
+                <td headers="row-sante col-bpc" tabindex="0" data-label="Britannique à poil court">Robuste, vigilance poids / cœur</td>
+                <td headers="row-sante col-maine" tabindex="0" data-label="Maine Coon">HCM possible, dépistage recommandé</td>
+              </tr>
 
-          <h2>Stimulation / activité</h2>
-          <ul>
-            <li>Munchkin (pattes courtes) : Jeux doux, puzzle-feeders</li>
-            <li>British Shorthair : Activité modérée, jeu quotidien</li>
-            <li>Maine Coon : Très joueur, besoin d’arbres hauts</li>
-          </ul>
+              <tr>
+                <th scope="row" id="row-securite" tabindex="0">Sécurité</th>
+                <td headers="row-securite col-munchkin" tabindex="0" data-label="Munchkin">Mobilité réduite → vigilance hauteurs</td>
+                <td headers="row-securite col-bpc" tabindex="0" data-label="Britannique à poil court">Calme, peu fugueur</td>
+                <td headers="row-securite col-maine" tabindex="0" data-label="Maine Coon">Grand gabarit, vigilance chutes / extérieur</td>
+              </tr>
 
-          <h2>Coût</h2>
-          <ul>
-            <li>Munchkin (pattes courtes) : 800–1 500 €</li>
-            <li>British Shorthair : 1 000–2 000 €</li>
-            <li>Maine Coon : 1 200–2 500 €</li>
-          </ul>
+              <tr>
+                <th scope="row" id="row-stim" tabindex="0">Stimulation / activité</th>
+                <td headers="row-stim col-munchkin" tabindex="0" data-label="Munchkin">Jeux doux, puzzle-feeders</td>
+                <td headers="row-stim col-bpc" tabindex="0" data-label="Britannique à poil court">Activité modérée, jeu quotidien</td>
+                <td headers="row-stim col-maine" tabindex="0" data-label="Maine Coon">Très joueur, besoin d’arbres hauts</td>
+              </tr>
 
-          <h2>Interaction humaine</h2>
-          <ul>
-            <li>Munchkin (pattes courtes) : Très proche, affectueux</li>
-            <li>British Shorthair : Indépendant mais câlin</li>
-            <li>Maine Coon : Sociable, “chat-chien”</li>
-          </ul>
-        </ul>
-      </section>
-    </main>
+              <tr>
+                <th scope="row" id="row-cout" tabindex="0">Coût</th>
+                <td headers="row-cout col-munchkin" tabindex="0" data-label="Munchkin">800–1 500&nbsp;€</td>
+                <td headers="row-cout col-bpc" tabindex="0" data-label="Britannique à poil court">1 000–2 000&nbsp;€</td>
+                <td headers="row-cout col-maine" tabindex="0" data-label="Maine Coon">1 200–2 500&nbsp;€</td>
+              </tr>
+
+              <tr>
+                <th scope="row" id="row-interaction" tabindex="0">Interaction humaine</th>
+                <td headers="row-interaction col-munchkin" tabindex="0" data-label="Munchkin">Très proche, affectueux</td>
+                <td headers="row-interaction col-bpc" tabindex="0" data-label="Britannique à poil court">Indépendant mais câlin</td>
+                <td headers="row-interaction col-maine" tabindex="0" data-label="Maine Coon">Sociable</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </section>
+
+    <!-- Plan du site (comme dans ta page) -->
+    <section class="wrap" aria-labelledby="plan">
+      <h2 id="plan">Plan du site</h2>
+      <ul>
+        <li><a href="/index.html">Accueil</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+        <li><a href="/rgpd.html">Politique de confidentialité (RGPD)</a></li>
+        <li><a href="/accessibilite.html">Accessibilité</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </section>
+  </main>
 
     <!---| Footer |-->
     <footer role="contentinfo" class="footer">

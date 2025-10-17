@@ -840,10 +840,42 @@ color:#0f2137;
 margin-bottom: 1rem;
 }
 
+.sr-only,
+.sr-only-focusable {
+position: absolute !important;
+width: 1px; 
+height: 1px;
+padding: 0; 
+margin: -1px;
+overflow: hidden; 
+clip: rect(0 0 0 0);
+clip-path: inset(50%);
+white-space: nowrap; 
+border: 0;
+}
+
+.sr-mobile {
+display: none;
+}
+
+.sr-desktop {
+display: inline;
+}
+
 .cat-table {
 border-collapse: separate;
 border-spacing: 0 12px;
 overflow: hidden;
+}
+
+.cat-table thead th + th{
+border-left: 8px solid transparent;
+background-clip: padding-box;
+}
+
+.cat-table tbody tr td:first-of-type{
+border-left: 8px solid transparent;
+background-clip: padding-box;
 }
 
 .cat-table caption {
@@ -902,6 +934,48 @@ padding-left: 2rem;
 .row-5 ~ td { background-color: #C7D2FE; }
 .row-6 ~ td { background-color: #e0e3eb; }
 
+.a11y-table-wrap {
+max-width: 100%;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+/* Accessible table */
+#a11y-table {
+border-collapse: collapse;
+width: 100%;
+table-layout: auto;
+}
+
+#a11y-table caption {
+text-align: left;
+font-weight: 600;
+padding: .5rem 0;
+}
+
+#a11y-table th, #a11y-table td {
+border: 1px solid #ccc;
+padding: .5rem;
+vertical-align: middle;
+word-break: break-word;
+hyphens: auto;
+}
+
+#a11y-table thead th {
+text-align: center;
+}
+
+#a11y-table th:focus,
+#a11y-table td:focus {
+outline: 3px solid #000;
+border-radius: 5px;
+outline-offset: -2px;
+}
+
+.a11y-table-section {
+padding: 0 1rem;
+}
+
 /* Responsive table */
 @media (max-width: 640px) {
 #catlife-table-title {
@@ -909,6 +983,74 @@ width: 100%;
 font-size: 1.35rem;
 text-align: left;
 }
+
+#a11y-table thead {
+position: absolute;
+width: 1px; height: 1px;
+margin: -1px; padding: 0; border: 0;
+overflow: hidden;
+clip: rect(0,0,0,0);
+clip-path: inset(50%);
+white-space: nowrap;
+}
+
+#a11y-table, #a11y-table tbody, #a11y-table tr {
+display: block;
+width: 100%;
+box-sizing: border-box;
+}
+
+#a11y-table tr {
+border: 1px solid #e0e0e0;
+border-radius: 12px;
+padding: .75rem;
+margin-bottom: 1rem;
+background: #fff;
+}
+
+#a11y-table td {
+display: grid;
+grid-template-columns: minmax(7rem, 42%) 1fr;
+gap: .5rem;
+align-items: start;
+border: 0;
+border-top: 1px solid #eee;
+padding: .5rem 0;
+word-break: break-word;
+overflow-wrap: anywhere;
+hyphens: auto;
+box-sizing: border-box;
+}
+#a11y-table td:first-of-type { border-top: 1px solid #eee; }
+
+#a11y-table td::before {
+content: attr(data-label);
+font-weight: 600;
+color: #333;
+}
+
+#a11y-table th[scope="row"] { 
+display: block;
+border: 0;
+padding: 0 0 .5rem;
+margin: 0 0 .5rem;
+background: transparent;
+width: 100%;
+}
+
+#a11y-table caption {
+display: block;
+width: 100%;
+text-align: left;
+font-weight: 500;
+margin-bottom: 1rem;
+padding: 0 .5rem;
+box-sizing: border-box;
+line-height: 1.4;
+}
+
+.a11y-table-section,
+.a11y-table-wrap { overflow-x: clip; }
 
 .sr-mobile { display: inline; }
 .sr-desktop { display: none; }
@@ -959,8 +1101,8 @@ text-align: left;
     color: #0f2137;
     white-space: normal;
 }
-.cat-table td:nth-of-type(1)::before { content: "Munchkin (pattes courtes)"; }
-.cat-table td:nth-of-type(2)::before { content: "British Shorthair"; }
+.cat-table td:nth-of-type(1)::before { content: "Munchkin"; }
+.cat-table td:nth-of-type(2)::before { content: "Britannique à poil court"; }
 .cat-table td:nth-of-type(3)::before { content: "Maine Coon"; }
 .cat-table tbody tr td:last-of-type { border-radius: 0 0 6px 6px; }
 .cat-table thead th + th, .cat-table tbody tr td:first-of-type { border-left: none; }
